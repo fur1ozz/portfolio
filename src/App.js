@@ -7,7 +7,7 @@ import Projects from "./components/Projects";
 function App() {
   return (
       <Router>
-          <div className="min-h-screen dark:bg-[#1d2125]">
+          <div className="min-h-screen dark:bg-[#1d2125] font-topper">
               <Routes>
                   <Route
                       path="/"
@@ -18,6 +18,7 @@ function App() {
                   {/*    element={<PageNotFound />}*/}
                   {/*/>*/}
                   <Route exact path="/home" element = {<Projects />}/>
+                  <Route exact path="/projects" element = {<Projects />}/>
               </Routes>
           </div>
       </Router>
