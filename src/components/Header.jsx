@@ -1,15 +1,20 @@
 import React from 'react';
-import {Link, useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
-const linkButton = (name, locationName) => {
+const LinkButton = ({ name, currentPath }) => {
     const path = `/${name}`;
+    const isActive = currentPath === path;
 
     return (
-        <Link to={path} className={`flex items-center px-3 py-[2px] ${locationName === '/'+name ? 'bg-low-200 underline decoration-white' : 'bg-low-100'} hover:bg-low-200 rounded justify-center mx-2 transition-all duration-100 ease-in`}>
+        <Link
+            to={path}
+            className={`flex items-center px-3 py-[2px] ${isActive ? 'bg-low-200 underline decoration-white' : 'bg-low-100'} hover:bg-low-200 rounded justify-center mx-2 transition-all duration-100 ease-in`}
+        >
             <span className="text-sm uppercase font-normal whitespace-nowrap text-white">{name}</span>
         </Link>
     );
-}
+};
+
 const Header = () => {
     const location = useLocation();
 
@@ -21,10 +26,9 @@ const Header = () => {
                         <span className="text-lg uppercase font-extrabold whitespace-nowrap text-white">fur1ozz</span>
                     </a>
                     <div className="flex">
-                        {linkButton("about", location.pathname)}
-                        {linkButton("projects", location.pathname)}
-                        {linkButton("contact", location.pathname)}
-                        {linkButton("about", location.pathname)}
+                        <LinkButton name="about" currentPath={location.pathname} />
+                        <LinkButton name="projects" currentPath={location.pathname} />
+                        <LinkButton name="contact" currentPath={location.pathname} />
                     </div>
                 </div>
             </nav>
