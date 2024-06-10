@@ -14,7 +14,7 @@ const CoffeeShop = () => {
                             Explore our coffee shop advertisement crafted with pure HTML and CSS. Featuring multiple SVG vectors and a fully responsive design, this project beautifully showcases our offerings on any device. Discover the perfect brew with elegance and simplicity.                        </p>
                         <div className="flex flex-col mt-16">
                             <h2 className="flex text-4xl text-pj-200 font-semibold justify-center">Stack</h2>
-                            <div className="flex">
+                            <div className="flex mt-2">
                                 <svg viewBox="0 0 128 128" className="sm:w-[100px] w-[60px] mx-2">
                                     <path fill="#E44D26" d="M19.037 113.876L9.032 1.661h109.936l-10.016 112.198-45.019 12.48z"></path><path fill="#F16529" d="M64 116.8l36.378-10.086 8.559-95.878H64z"></path><path fill="#EBEBEB" d="M64 52.455H45.788L44.53 38.361H64V24.599H29.489l.33 3.692 3.382 37.927H64zm0 35.743l-.061.017-15.327-4.14-.979-10.975H33.816l1.928 21.609 28.193 7.826.063-.017z"></path><path fill="#fff" d="M63.952 52.455v13.763h16.947l-1.597 17.849-15.35 4.143v14.319l28.215-7.82.207-2.325 3.234-36.233.335-3.696h-3.708zm0-27.856v13.762h33.244l.276-3.092.628-6.978.329-3.692z"></path>
                                 </svg>
@@ -23,6 +23,12 @@ const CoffeeShop = () => {
                                 </svg>
                             </div>
                         </div>
+                    </div>
+                    <div className="mt-16 mx-5">
+                        <p className="text-pj-200 font-medium text-lg">Notes:</p>
+                        <ul className="ml-6 mt-2 text-pj-300">
+                            <p>This project focused primarily on design, allowing me to take a break from back-end development and refresh my pure HTML and CSS skills.</p>
+                        </ul>
                     </div>
                 </div>
                 <div className="lg:w-1/2 flex sm:p-10 p-2 h-screen">

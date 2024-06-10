@@ -5,6 +5,8 @@ import Projects from "./components/Projects";
 import CosmoRun from "./components/projectPages/CosmoRun";
 import MemoryGame from "./components/projectPages/MemoryGame";
 import CoffeeShop from "./components/projectPages/CoffeeShop";
+import TickGet from "./components/projectPages/TickGet";
+import About from "./components/About";
 
 
 function App() {
@@ -14,19 +16,20 @@ function App() {
               <Routes>
                   <Route
                       path="/"
-                      element={<Navigate to="/home" />}
+                      element={<Navigate to="/about" />}
                   />
                   {/*<Route*/}
                   {/*    path="*"*/}
                   {/*    element={<PageNotFound />}*/}
                   {/*/>*/}
-                  <Route exact path="/home" element = {<Projects />}/>
-                  <Route exact path="/projects" element = {<Projects />}/>
+                  <Route exact path="/about" element = {<About />}/>
+                  <Route path="/projects" element = {<Projects />}/>
 
                   {/*Each Project*/}
-                  <Route exact path="/projects/cosmo-run" element = {<CosmoRun />}/>
-                  <Route exact path="/projects/memory-game" element = {<MemoryGame />}/>
-                  <Route exact path="/projects/coffee-shop" element = {<CoffeeShop />}/>
+                  <Route path="/projects/cosmo-run" element = {<CosmoRun />}/>
+                  <Route path="/projects/memory-game" element = {<MemoryGame />}/>
+                  <Route path="/projects/coffee-shop" element = {<CoffeeShop />}/>
+                  <Route path="/projects/tick-get" element = {<TickGet />}/>
               </Routes>
           </div>
       </Router>

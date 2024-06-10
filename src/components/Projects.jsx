@@ -28,7 +28,7 @@ const Projects = () => {
                         <div className="w-full h-full bg-cover bg-coffee bg-center group-hover:-translate-y-1 transition-all duration-5s00 ease-in-out"></div>
                         {child('Coffee Time')}
                     </Link>
-                    <Link to="" className="border-4 border-black relative group filter grayscale hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] h-full flex-shrink-0 overflow-hidden">
+                    <Link to="tick-get" className="border-4 border-black relative group filter grayscale hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] h-full flex-shrink-0 overflow-hidden">
                         <div className="w-full h-full bg-cover bg-tickets bg-center group-hover:-translate-y-1 transition-all duration-500 ease-in-out"></div>
                         {child('TickGet')}
                     </Link>

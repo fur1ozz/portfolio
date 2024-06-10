@@ -22,7 +22,7 @@ const Header = () => {
         <div className="absolute w-full z-10">
             <nav className="p-6">
                 <div className="flex justify-between items-center mx-auto">
-                    <a className="flex items-center px-3 bg-primary-500 rounded justify-center">
+                    <a href="/" className="flex items-center px-3 bg-primary-500 rounded justify-center">
                         <span className="text-lg uppercase font-extrabold whitespace-nowrap text-white">fur1ozz</span>
                     </a>
                     <div className="flex">
