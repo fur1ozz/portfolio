@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link, useLocation } from "react-router-dom";
 
 const LinkButton = ({ name, currentPath }) => {
@@ -14,10 +14,27 @@ const LinkButton = ({ name, currentPath }) => {
         </Link>
     );
 };
+const LinkButtonPhone = ({ name, currentPath }) => {
+    const path = `/${name}`;
+    const isActive = currentPath === path;
+
+    return (
+        <Link
+            to={path}
+            className={`flex items-center ${isActive ? ' underline decoration-pj-400 decoration-dotted' : ''} hover:bg-low-200 justify-center mx-2 transition-all duration-100 ease-in`}
+        >
+            <span className="text-lg uppercase font-medium whitespace-nowrap text-pj-400">{name}</span>
+        </Link>
+    );
+};
 
 const Header = () => {
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
 
+    const handleMobileMenuToggle = () => {
+        setMobileMenuOpen(!mobileMenuOpen);
+    };
     return (
         <div className="absolute w-full z-10">
             <nav className="p-6">
@@ -25,10 +42,33 @@ const Header = () => {
                     <a href="/" className="flex items-center px-3 bg-primary-500 rounded justify-center">
                         <span className="text-lg uppercase font-extrabold whitespace-nowrap text-white">fur1ozz</span>
                     </a>
-                    <div className="flex">
+                    <button
+                        onClick={handleMobileMenuToggle}
+                        type="button"
+                        className="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100"
+                        aria-expanded={mobileMenuOpen}
+                    >
+                        <span className="sr-only">Open main menu</span>
+                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
+                        <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                    </button>
+                    <div className="sm:flex hidden">
                         <LinkButton name="about" currentPath={location.pathname} />
                         <LinkButton name="projects" currentPath={location.pathname} />
                         <LinkButton name="contact" currentPath={location.pathname} />
+                    </div>
+                    <div className={`sm:hidden ${mobileMenuOpen ? "translate-x-0" : "translate-x-[200px]"} w-[200px] h-screen bg-pj-300 fixed top-0 right-0 p-5 transition-all duration-200 ease-in-out`}>
+                        <button
+                            onClick={handleMobileMenuToggle}
+                            className="text-pj-400"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        <LinkButtonPhone name="about" currentPath={location.pathname} />
+                        <LinkButtonPhone name="projects" currentPath={location.pathname} />
+                        <LinkButtonPhone name="contact" currentPath={location.pathname} />
                     </div>
                 </div>
             </nav>

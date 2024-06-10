@@ -33,7 +33,7 @@ const CoffeeShop = () => {
                 </div>
                 <div className="lg:w-1/2 flex sm:p-10 p-2 h-screen">
                     <div className="w-full justify-center items-center flex">
-                        <video src={videoCoffee} autoPlay loop muted className="rounded-[15px] object-contain shadow-lg shadow-gray-900" />
+                        <video src={videoCoffee} autoPlay loop muted className="rounded-[10px] object-contain shadow-lg shadow-gray-900" />
                     </div>
                 </div>
             </div>

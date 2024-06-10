@@ -28,7 +28,7 @@ const About = () => {
         <>
             <Header />
             <div className="flex min-h-screen bg-[#f4f3f3] flex-col lg:flex-row">
-                <div className="lg:w-1/2 flex sm:p-10 p-2 flex-col justify-center">
+                <div className="lg:w-1/2 flex sm:p-10 p-2 pt-10 flex-col justify-center">
                     <div className="flex flex-col sm:mx-5 mt-8">
                         <h1 className="flex text-5xl font-bold text-pj-100 ">Hi, I`m Tomass. I am currently studying at the VTDT</h1>
                         <p className="text-pj-300 text-lg text-justify mt-14">
