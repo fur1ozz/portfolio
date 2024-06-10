@@ -27,6 +27,8 @@ module.exports = {
         'rocket': 'url("../public/images/projects/rocket.jpg")',
 
         'iphone': 'url("../public/images/iphoneCroped.png")',
+
+        'lancia': 'url("../public/images/lanciaContact.jpg")',
       },
       fontFamily: {
         topper: ['Poppins', 'sans-serif']

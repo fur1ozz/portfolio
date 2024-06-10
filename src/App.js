@@ -1,12 +1,11 @@
 import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
-import Hero from "./components/Hero";
-import Hero2 from "./components/Hero2";
 import Projects from "./components/Projects";
 import CosmoRun from "./components/projectPages/CosmoRun";
 import MemoryGame from "./components/projectPages/MemoryGame";
 import CoffeeShop from "./components/projectPages/CoffeeShop";
 import TickGet from "./components/projectPages/TickGet";
 import About from "./components/About";
+import Contact from "./components/Contact";
 
 
 function App() {
@@ -24,6 +23,7 @@ function App() {
                   {/*/>*/}
                   <Route exact path="/about" element = {<About />}/>
                   <Route path="/projects" element = {<Projects />}/>
+                  <Route path="/contact" element = {<Contact />}/>
 
                   {/*Each Project*/}
                   <Route path="/projects/cosmo-run" element = {<CosmoRun />}/>
