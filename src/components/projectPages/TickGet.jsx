@@ -6,7 +6,7 @@ const TickGet = () => {
         <>
             <Header />
             <div className="min-h-screen overflow-hidden bg-pj-400 flex flex-wrap flex-col lg:flex-row">
-                <div className="lg:w-1/2 flex sm:p-10 p-2 flex-col">
+                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col">
                     <div className="flex flex-col items-center">
                         <h1 className="flex text-5xl font-bold text-pj-100 mt-10">TickGet</h1>
                         <p className="text-pj-300 text-lg text-justify sm:mx-5 mt-14">

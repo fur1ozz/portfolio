@@ -43,13 +43,13 @@ const About = () => {
                     <img src="/images/T-Heisenberg.jpeg" alt="" className="h-[80%] rounded-3xl"/>
                 </div>
             </div>
-            <div className="flex h-screen flex-col sm:p-10 p-2" ref={secondDivRef}>
+            <div className="flex min-h-screen flex-col sm:p-10 p-2" ref={secondDivRef}>
                 <div className="w-full flex flex-col">
                     <div className="w-full flex flex-col items-center">
                         <h1 className="text-4xl font-semibold text-pj-100">My skills</h1>
-                        <p className="text-pj-300 text-lg my-8">These are the programming languages and libraries with which I have experience, along with my proficiency level indicated as a percentage</p>
+                        <p className="text-pj-300 text-lg my-8 md:mx-32 text-center">These are the programming languages and libraries with which I have experience, along with my proficiency level indicated as a percentage</p>
                     </div>
-                    <div className="sm:mx-20 mx-5">
+                    <div className="sm:mx-20 mx-5 mt-10">
                         <div className="grid md:grid-cols-2 grid-cols-1">
                             <Item name="HTML" proc={99} />
                             <Item name="CSS" proc={99} />
@@ -62,6 +62,18 @@ const About = () => {
                             <Item name="Sql" proc={85} />
                             <Item name="C#" proc={35} />
                         </div>
+                    </div>
+                    <div className="w-full flex flex-col items-center mt-16">
+                        <h1 className="text-4xl font-semibold text-pj-100">Feedback</h1>
+                        <p className="text-pj-300 text-lg my-2 md:mx-32 indent-8">
+                            "Tomass Veveris consistently demonstrates a high level of proficiency in his programming skills. His expertise spans across multiple languages and frameworks, allowing him to effectively tackle diverse projects. Tomass excels at both front-end and back-end development, showcasing his ability to create well-rounded, comprehensive solutions.
+                        </p>
+                        <p className="text-pj-300 text-lg my-2 md:mx-32 indent-8">
+                            In addition to his technical prowess, Tomass is known for his strong work ethic and reliability. He consistently meets deadlines and delivers high-quality work, regardless of the complexity of the tasks assigned. His ability to quickly adapt and learn new technologies further enhances his value as a programmer.
+                        </p>
+                        <p className="text-pj-300 text-lg my-2 md:mx-32 indent-8">
+                            Tomass’s dedication to his craft, combined with his exceptional problem-solving skills, makes him an outstanding asset to any team. His commitment to continuous improvement and excellence ensures that he consistently exceeds expectations in all his endeavors."
+                        </p>
                     </div>
                 </div>
             </div>
