@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Header from "./Header";
 import emailjs from "@emailjs/browser";
+import '../SliderStyles/Contact.css'
 
 const Contact = () => {
     const form = useRef();
@@ -12,9 +13,13 @@ const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState('');
     const [isFormValid, setIsFormValid] = useState(false);
+    const [animate, setAnimate] = useState(false);
 
     useEffect(() => {
-        // Check if all fields have at least one character
+        setAnimate(true);
+    }, []);
+
+    useEffect(() => {
         const isValid = formData.from_name.trim() !== '' &&
             formData.user_email.trim() !== '' &&
             formData.message.trim() !== '';
@@ -64,11 +69,13 @@ const Contact = () => {
         <>
             <Header />
             <div className="flex min-h-screen items-center">
-                <div className="flex flex-col md:w-3/5 w-full justify-center items-center h-screen bg-pj-400">
-                    <div className="w-4/5 flex justify-center">
+                <div className="flex flex-col md:w-3/5 w-full justify-center items-center h-screen bg-pj-400 link-container">
+                    <div className={`w-4/5 flex justify-center ${animate ? 'animate-slide-from-left' : ''}`}>
                         <h1 className="flex text-5xl font-bold text-pj-100 mb-6">Contact Me</h1>
                     </div>
-                    <form ref={form} onSubmit={sendEmail} className="flex flex-col p-5 shadow-lg shadow-gray-400 w-4/5 bg-white rounded-lg md:max-w-[60%]">
+                    <form ref={form} onSubmit={sendEmail} className={`flex flex-col p-5 shadow-lg shadow-gray-400 dark:shadow-low-100 w-4/5 bg-white dark:bg-contact-100 rounded-lg md:max-w-[60%] link-container ${animate ? 'animate-slide-from-left' : ''} `}
+                          style={{ '--animation-delay': `${0.1}s` }}
+                    >
                         <div className="mb-6">
                             <label htmlFor="your_name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your name</label>
                             <input
@@ -76,7 +83,7 @@ const Contact = () => {
                                 name="from_name"
                                 value={formData.from_name}
                                 onChange={handleChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-contact-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none"
                                 placeholder="John Smith"
                             />
                         </div>
@@ -93,7 +100,7 @@ const Contact = () => {
                                 name="user_email"
                                 value={formData.user_email}
                                 onChange={handleChange}
-                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full ps-10 p-2.5 dark:bg-contact-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none"
                                 placeholder="john.smith@gmail.com"
                             />
                         </div>
@@ -105,14 +112,14 @@ const Contact = () => {
                                 name="message"
                                 value={formData.message}
                                 onChange={handleChange}
-                                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 resize-none"
+                                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 dark:bg-contact-200 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white outline-none"
                                 placeholder="Write you message..."
                             ></textarea>
                         </div>
                         <div className="flex w-full justify-center">
                             <button
                                 type="submit"
-                                className="w-[100px] text-gray-900 bg-[#F7BE38] hover:bg-[#F7BE38]/90 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center justify-center disabled:cursor-not-allowed disabled:bg-[#F7BE38]/50 disabled:line-through decoration-2 transition-all duration-500 ease-in-out"
+                                className="w-[100px] text-gray-900 bg-[#F7BE38] hover:bg-[#F7BE38]/90 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center justify-center disabled:cursor-not-allowed disabled:bg-[#F7BE38]/50 transition-all duration-500 ease-in-out"
                                 disabled={isSubmitting || !isFormValid}
                             >
                                 {isSubmitting ?
@@ -130,7 +137,7 @@ const Contact = () => {
                     </form>
                 </div>
                 <div className="md:flex hidden flex-col w-2/5 justify-center h-screen">
-                    <div className="w-full h-full bg-cover bg-lancia bg-center"></div>
+                    <div className={`w-full h-full bg-cover bg-lancia bg-center link-container ${animate ? 'animate-slide-from-right' : ''}`}></div>
                 </div>
             </div>
         </>

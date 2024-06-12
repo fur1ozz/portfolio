@@ -6,6 +6,9 @@ import CoffeeShop from "./components/projectPages/CoffeeShop";
 import TickGet from "./components/projectPages/TickGet";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import DrogasV2 from "./components/projectPages/DrogasV2";
+import GiraV2 from "./components/projectPages/GiraV2";
+import FinanceBudgeting from "./components/projectPages/Finance&Budgeting";
 
 
 function App() {
@@ -30,6 +33,9 @@ function App() {
                   <Route path="/projects/memory-game" element = {<MemoryGame />}/>
                   <Route path="/projects/coffee-shop" element = {<CoffeeShop />}/>
                   <Route path="/projects/tick-get" element = {<TickGet />}/>
+                  <Route path="/projects/drogas-v2" element = {<DrogasV2 />}/>
+                  <Route path="/projects/gira-v2" element = {<GiraV2 />}/>
+                  <Route path="/projects/finance-budgeting" element = {<FinanceBudgeting />}/>
               </Routes>
           </div>
       </Router>

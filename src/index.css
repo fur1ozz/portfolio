@@ -3,3 +3,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+root {
+    --pj-100: #252525;
+    --pj-200: #363636;
+    --pj-300: #5e5e5e;
+    --pj-400: #efefef;
+}
+
+.dark {
+    --pj-100: #ffffff;
+    --pj-200: #d3d3d3;
+    --pj-300: #afafaf;
+    --pj-400: #0c0c0c;
+}

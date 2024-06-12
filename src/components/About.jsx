@@ -6,8 +6,8 @@ const Item = ({ name, proc}) => {
     return (
         <div className="md:mx-5">
             <div className="flex justify-start font-semibold text-xl relative">
-                <span className="">{name}</span>
-                <span className="absolute" style={{ marginLeft: `${proc-5}%` }}>{proc}%</span>
+                <span className="text-pj-100">{name}</span>
+                <span className="absolute text-pj-100" style={{ marginLeft: `${proc-5}%` }}>{proc}%</span>
             </div>
             <div className="my-2 rounded-[10px] h-[20px] w-full bg-low-200 overflow-hidden">
                 <div className="bg-primary-500 h-full rounded-[10px]" style={{ width: `${proc}%` }}></div>
@@ -27,7 +27,7 @@ const About = () => {
     return (
         <>
             <Header />
-            <div className="flex min-h-screen bg-[#f4f3f3] flex-col lg:flex-row">
+            <div className="flex min-h-screen bg-[#f4f3f3] dark:bg-pj-400 flex-col lg:flex-row">
                 <div className="lg:w-1/2 flex sm:p-10 p-2 pt-10 flex-col justify-center">
                     <div className="flex flex-col sm:mx-5 mt-8">
                         <h1 className="flex text-5xl font-bold text-pj-100 ">Hi, I`m Tomass. I am currently studying at the VTDT</h1>
@@ -40,7 +40,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className="lg:w-1/2 flex sm:p-10 p-2 h-screen justify-center items-center">
-                    <img src="/images/T-Heisenberg.jpeg" alt="" className="h-[80%] rounded-3xl"/>
+                    <img src="/images/T-Heisenberg.jpeg" alt="" className="h-[80%] rounded-3xl shadow-lg shadow-gray-900 dark:shadow-low-100"/>
                 </div>
             </div>
             <div className="flex min-h-screen flex-col sm:p-10 p-2" ref={secondDivRef}>
@@ -62,18 +62,6 @@ const About = () => {
                             <Item name="Sql" proc={85} />
                             <Item name="C#" proc={35} />
                         </div>
-                    </div>
-                    <div className="w-full flex flex-col items-center mt-16">
-                        <h1 className="text-4xl font-semibold text-pj-100">Feedback</h1>
-                        <p className="text-pj-300 text-lg my-2 md:mx-32 indent-8">
-                            "Tomass Veveris consistently demonstrates a high level of proficiency in his programming skills. His expertise spans across multiple languages and frameworks, allowing him to effectively tackle diverse projects. Tomass excels at both front-end and back-end development, showcasing his ability to create well-rounded, comprehensive solutions.
-                        </p>
-                        <p className="text-pj-300 text-lg my-2 md:mx-32 indent-8">
-                            In addition to his technical prowess, Tomass is known for his strong work ethic and reliability. He consistently meets deadlines and delivers high-quality work, regardless of the complexity of the tasks assigned. His ability to quickly adapt and learn new technologies further enhances his value as a programmer.
-                        </p>
-                        <p className="text-pj-300 text-lg my-2 md:mx-32 indent-8">
-                            Tomass’s dedication to his craft, combined with his exceptional problem-solving skills, makes him an outstanding asset to any team. His commitment to continuous improvement and excellence ensures that he consistently exceeds expectations in all his endeavors."
-                        </p>
                     </div>
                 </div>
             </div>

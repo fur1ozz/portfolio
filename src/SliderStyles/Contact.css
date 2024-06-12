@@ -1,0 +1,37 @@
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.animate-slide-from-left {
+    animation: slideFromLeft 0.7s ease-in-out forwards;
+}
+
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.animate-slide-from-right {
+    animation: slideFromRight 0.7s ease-in-out forwards;
+}
+
+.link-container {
+    animation-delay: var(--animation-delay);
+}

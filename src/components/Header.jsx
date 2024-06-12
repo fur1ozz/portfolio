@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Link, useLocation } from "react-router-dom";
+import {useDarkMode} from "../utils/HeaderUtils";
 
 const LinkButton = ({ name, currentPath }) => {
     const path = `/${name}`;
@@ -29,6 +30,7 @@ const LinkButtonPhone = ({ name, currentPath }) => {
 };
 
 const Header = () => {
+    const [isDarkMode, toggleDarkMode] = useDarkMode();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
 
@@ -53,6 +55,20 @@ const Header = () => {
                         <svg className="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                     </button>
                     <div className="sm:flex hidden">
+                        <button
+                            className="flex transition-all duration-100 ease-in text-primary-500 mx-2"
+                            onClick={toggleDarkMode}
+                        >
+                            {isDarkMode === "dark" ? (
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" fill="currentColor" />
+                                </svg>
+                            ) : (
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                                </svg>
+                            )}
+                        </button>
                         <LinkButton name="about" currentPath={location.pathname} />
                         <LinkButton name="projects" currentPath={location.pathname} />
                         <LinkButton name="contact" currentPath={location.pathname} />

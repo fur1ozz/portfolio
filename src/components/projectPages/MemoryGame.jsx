@@ -1,19 +1,22 @@
 import React from 'react';
 import Header from "../Header";
 import videoCosmo from "../../assets/cosmoRun.mp4";
+import useAnimateOnMount from "../../utils/UseAnimateOnMount";
 
 const MemoryGame = () => {
+    const animate = useAnimateOnMount();
+
     return (
         <>
             <Header />
             <div className="min-h-screen overflow-hidden bg-pj-400 flex flex-wrap flex-col lg:flex-row">
                 <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col">
                     <div className="flex flex-col items-center">
-                        <h1 className="flex text-5xl font-bold text-pj-100 mt-10">Flip Meha</h1>
-                        <p className="text-pj-300 text-lg text-justify sm:mx-5 mt-14">
+                        <h1 className={`flex text-5xl font-bold text-pj-100 mt-10 ${animate ? 'animate-slide-from-left' : ''}`}>Flip Meha</h1>
+                        <p className={`text-pj-300 text-lg text-justify sm:mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
                             <span className="text-pj-200 font-semibold capitalize">Project Concept: </span>
                             Dive into the world of memory mastery with this React-powered flip game. Match car logos in a race against time to test your recall skills. With seamless login and registration features, enjoy personalized gameplay. Experience the thrill of unlocking new levels and features as you sharpen your memory and become the ultimate car logo connoisseur!                        </p>
-                        <div className="flex flex-col mt-16">
+                        <div className={`flex flex-col mt-16 ${animate ? 'animate-slide-from-left' : ''}`}>
                             <h2 className="flex text-4xl text-pj-200 font-semibold justify-center">Stack</h2>
                             <div className="flex mt-2">
                                 <svg viewBox="0 0 128 128" className="sm:w-[100px] w-[60px] mx-2">
@@ -28,7 +31,7 @@ const MemoryGame = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-16 mx-5">
+                    <div className={`mt-16 mx-5 ${animate ? 'animate-slide-from-left' : ''}`}>
                         <p className="text-pj-200 font-medium text-lg">Notes:</p>
                         <ul className="ml-6 mt-2 text-pj-300">
                             <p>This project remains unfinished, currently about halfway complete. Time flew by, and I have not yet had the opportunity to complete it.</p>
@@ -36,7 +39,7 @@ const MemoryGame = () => {
                     </div>
                 </div>
                 <div className="lg:w-1/2 flex sm:p-10 p-2 h-screen">
-                    <div className="w-full justify-center items-center flex">
+                    <div className={`w-full justify-center items-center flex ${animate ? 'animate-slide-from-right' : ''}`}>
                         {/*<video src={videoCosmo} autoPlay loop muted className="rounded-[30px] h-[80%] object-contain shadow-lg shadow-gray-900" />*/}
                     </div>
                 </div>

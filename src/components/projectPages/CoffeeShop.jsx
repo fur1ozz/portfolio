@@ -1,18 +1,21 @@
 import React from 'react';
 import Header from "../Header";
 import videoCoffee from "../../assets/coffeeShop.mp4"
+import useAnimateOnMount from "../../utils/UseAnimateOnMount";
 const CoffeeShop = () => {
+    const animate = useAnimateOnMount();
+
     return (
         <>
             <Header />
             <div className="min-h-screen overflow-hidden bg-pj-400 flex flex-wrap flex-col lg:flex-row">
                 <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col">
                     <div className="flex flex-col items-center">
-                        <h1 className="flex text-5xl font-bold text-pj-100 mt-10">Coffee Time</h1>
-                        <p className="text-pj-300 text-lg text-justify sm:mx-5 mt-14">
+                        <h1 className={`flex text-5xl font-bold text-pj-100 mt-10 ${animate ? 'animate-slide-from-left' : ''}`}>Coffee Time</h1>
+                        <p className={`text-pj-300 text-lg text-justify sm:mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
                             <span className="text-pj-200 font-semibold capitalize">Project Concept: </span>
                             Explore our coffee shop advertisement crafted with pure HTML and CSS. Featuring multiple SVG vectors and a fully responsive design, this project beautifully showcases our offerings on any device. Discover the perfect brew with elegance and simplicity.                        </p>
-                        <div className="flex flex-col mt-16">
+                        <div className={`flex flex-col mt-16 ${animate ? 'animate-slide-from-left' : ''}`}>
                             <h2 className="flex text-4xl text-pj-200 font-semibold justify-center">Stack</h2>
                             <div className="flex mt-2">
                                 <svg viewBox="0 0 128 128" className="sm:w-[100px] w-[60px] mx-2">
@@ -24,7 +27,7 @@ const CoffeeShop = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-16 mx-5">
+                    <div className={`mt-16 mx-5 ${animate ? 'animate-slide-from-left' : ''}`}>
                         <p className="text-pj-200 font-medium text-lg">Notes:</p>
                         <ul className="ml-6 mt-2 text-pj-300">
                             <p>This project focused primarily on design, allowing me to take a break from back-end development and refresh my pure HTML and CSS skills.</p>
@@ -32,8 +35,8 @@ const CoffeeShop = () => {
                     </div>
                 </div>
                 <div className="lg:w-1/2 flex sm:p-10 p-2 h-screen">
-                    <div className="w-full justify-center items-center flex">
-                        <video src={videoCoffee} autoPlay loop muted className="rounded-[10px] object-contain shadow-lg shadow-gray-900" />
+                    <div className={`w-full justify-center items-center flex ${animate ? 'animate-slide-from-right' : ''}`}>
+                        <video src={videoCoffee} autoPlay loop muted className="rounded-[10px] object-contain shadow-lg shadow-gray-900 dark:shadow-low-100" />
                     </div>
                 </div>
             </div>
