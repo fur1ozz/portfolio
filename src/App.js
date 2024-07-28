@@ -20,10 +20,10 @@ function App() {
                       path="/"
                       element={<Navigate to="/about" />}
                   />
-                  {/*<Route*/}
-                  {/*    path="*"*/}
-                  {/*    element={<PageNotFound />}*/}
-                  {/*/>*/}
+                  <Route
+                      path="*"
+                      element={<Navigate to="/about" />}
+                  />
                   <Route exact path="/about" element = {<About />}/>
                   <Route path="/projects" element = {<Projects />}/>
                   <Route path="/contact" element = {<Contact />}/>

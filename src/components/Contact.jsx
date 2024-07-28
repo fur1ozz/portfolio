@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import Header from "./Header";
 import emailjs from "@emailjs/browser";
 import '../SliderStyles/Contact.css'
+import useAnimateOnMount from "../utils/UseAnimateOnMount";
 
 const Contact = () => {
     const form = useRef();
@@ -13,11 +14,7 @@ const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState('');
     const [isFormValid, setIsFormValid] = useState(false);
-    const [animate, setAnimate] = useState(false);
-
-    useEffect(() => {
-        setAnimate(true);
-    }, []);
+    const animate = useAnimateOnMount();
 
     useEffect(() => {
         const isValid = formData.from_name.trim() !== '' &&
@@ -69,11 +66,11 @@ const Contact = () => {
         <>
             <Header />
             <div className="flex min-h-screen items-center">
-                <div className="flex flex-col md:w-3/5 w-full justify-center items-center h-screen bg-pj-400 link-container">
+                <div className="flex flex-col lg:w-3/5 w-full justify-center items-center h-screen bg-pj-400 link-container">
                     <div className={`w-4/5 flex justify-center ${animate ? 'animate-slide-from-left' : ''}`}>
                         <h1 className="flex text-5xl font-bold text-pj-100 mb-6">Contact Me</h1>
                     </div>
-                    <form ref={form} onSubmit={sendEmail} className={`flex flex-col p-5 shadow-lg shadow-gray-400 dark:shadow-low-100 w-4/5 bg-white dark:bg-contact-100 rounded-lg md:max-w-[60%] link-container ${animate ? 'animate-slide-from-left' : ''} `}
+                    <form ref={form} onSubmit={sendEmail} className={`flex flex-col p-5 shadow-lg shadow-gray-400 dark:shadow-low-100 w-4/5 bg-white dark:bg-contact-100 rounded-lg lg:max-w-[60%] link-container ${animate ? 'animate-slide-from-left' : ''} `}
                           style={{ '--animation-delay': `${0.1}s` }}
                     >
                         <div className="mb-6">
@@ -136,7 +133,7 @@ const Contact = () => {
                         </div>
                     </form>
                 </div>
-                <div className="md:flex hidden flex-col w-2/5 justify-center h-screen">
+                <div className="lg:flex hidden flex-col w-2/5 justify-center h-screen bg-pj-400">
                     <div className={`w-full h-full bg-cover bg-lancia bg-center link-container ${animate ? 'animate-slide-from-right' : ''}`}></div>
                 </div>
             </div>

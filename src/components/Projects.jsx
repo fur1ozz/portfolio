@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Header from "./Header";
 import { Link } from "react-router-dom";
 import '../SliderStyles/Project.css';
-import useAnimateOnMount from "../utils/UseAnimateOnMount"; // Assuming your CSS file is named Projects.css
+import useAnimateOnMount from "../utils/UseAnimateOnMount";
 
 const child = (name) => {
     return (
@@ -14,6 +14,41 @@ const child = (name) => {
 
 const Projects = () => {
     const animate = useAnimateOnMount();
+    const [showExplore, setShowExplore] = useState(true);
+    const [fadeOut, setFadeOut] = useState(false);
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            console.log('Scrolling...');
+            setFadeOut(true);
+            setTimeout(() => setShowExplore(false), 200);
+        };
+
+        window.addEventListener('scroll', handleScroll, { once: true });
+
+        if (containerRef.current) {
+            containerRef.current.addEventListener('scroll', handleScroll, { once: true });
+        }
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (containerRef.current) {
+                containerRef.current.removeEventListener('scroll', handleScroll);
+            }
+        };
+    }, []);
+
+    const handleExploreClick = () => {
+        setFadeOut(true);
+        if (containerRef.current) {
+            containerRef.current.scrollTo({
+                left: containerRef.current.scrollWidth,
+                behavior: 'smooth'
+            });
+        }
+        setTimeout(() => setShowExplore(false), 200);
+    };
 
     const links = [
         { to: "cosmo-run", name: "Cosmo Run", bgClass: "bg-rocket" },
@@ -29,12 +64,24 @@ const Projects = () => {
     return (
         <div>
             <Header />
-            <div className="h-screen overflow-x-auto overflow-y-hidden bg-black">
+            <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden bg-black">
+                <div className="absolute h-screen w-screen top-0 left-0">
+                    {showExplore && (
+                        <div className={`flex absolute z-10 bottom-0 right-0 mb-16 mr-20 transition-all duration-200 ${fadeOut ? 'opacity-0' : ''} `}>
+                            <button
+                                className="flex items-center px-3 py-0.5 hover:scale-110 opacity-90 hover:opacity-100 transition ease-in-out bg-[#D3EEDD] rounded-md justify-center text-lg text-[#7d9182] font-semibold shadow-[0_0_25px_0_rgba(0,0,0,0.3)] shadow-white"
+                                onClick={handleExploreClick}
+                            >
+                                Explore ->
+                            </button>
+                        </div>
+                    )}
+                </div>
                 <div className="flex h-full">
                     {links.map((link, index) => (
                         <Link
                             to={link.to}
-                            className={`border-4 border-black relative group filter grayscale-[90%] hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] h-full flex-shrink-0 overflow-hidden link-container ${animate ? 'slide-down visible' : 'invisible'}`}
+                            className={`border-4 border-black relative group filter grayscale-[90%] hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] h-full flex-shrink-0 overflow-hidden link-container ${animate ? 'slide-down' : ''}`}
                             style={{ '--animation-delay': `${index * 0.05}s` }}
                             key={index}
                         >
@@ -47,6 +94,7 @@ const Projects = () => {
                     </div>
                 </div>
             </div>
+
         </div>
     );
 };

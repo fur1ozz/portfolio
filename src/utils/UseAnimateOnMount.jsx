@@ -5,7 +5,11 @@ const useAnimateOnMount = () => {
     const [animate, setAnimate] = useState(false);
 
     useEffect(() => {
-        setAnimate(true);
+        const isMobile = window.innerWidth <= 1024;
+
+        if (!isMobile) {
+            setAnimate(true);
+        }
     }, []);
 
     return animate;
