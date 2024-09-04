@@ -16,7 +16,7 @@ const About = () => {
             <Header />
             <div className="flex lg:min-h-screen bg-[#fff] dark:bg-pj-400 flex-col lg:flex-row">
                 <div className="lg:w-1/2 flex sm:p-10 p-2 pt-10 flex-col justify-center">
-                    <div className="flex flex-col sm:mx-5 lg:mt-8 mt-20 mx-5">
+                    <div className="flex flex-col lg:mt-8 mt-20 sm:mx-20 mx-5">
                         <h1 className="flex text-5xl font-bold text-pj-100 ">Hi, I`m Tomass. I am currently studying at  VTDT</h1>
                         <p className="text-pj-300 text-lg text-justify mt-14 indent-8">
                             My name is Tomass Vēveris, and I am currently studying programming. Our curriculum encompasses both front-end and back-end web development, enabling us to create comprehensive websites. Additionally, I have expanded my skills by developing a simple game in C#.
