@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-root {
+:root {
     --pj-100: #252525;
     --pj-200: #363636;
     --pj-300: #5e5e5e;

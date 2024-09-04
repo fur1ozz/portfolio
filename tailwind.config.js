@@ -15,7 +15,7 @@ module.exports = {
           300: "var(--pj-300)",
           400: "var(--pj-400)",
         },
-        contact: {"100":"#1a1a1a", "200":"#414141", "test":"#7d9182"}
+        contact: {"100":"#1a1a1a", "200":"#414141", "test":"#646464"}
       },
       backgroundImage: {
         'parallax1': 'url("../public/images/hero/audi_background.jpeg")',
