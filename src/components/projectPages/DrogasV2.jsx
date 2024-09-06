@@ -9,10 +9,10 @@ const DrogasV2 = () => {
         <>
             <Header />
             <div className="min-h-screen overflow-hidden bg-pj-400 flex flex-wrap flex-col lg:flex-row">
-                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col">
+                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col justify-center">
                     <div className="flex flex-col items-center">
                         <h1 className={`flex text-5xl font-bold text-pj-100 mt-10 ${animate ? 'animate-slide-from-left' : ''}`}>Drogas V2</h1>
-                        <p className={`text-pj-300 text-lg text-justify sm:mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
+                        <p className={`text-pj-300 text-lg text-justify mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
                             <span className="text-pj-200 font-semibold capitalize">Project Concept: </span>
                             Introducing our React-based warehouse management system. Admins can oversee worker data, while workers manage orders and warehouse shelves. With secure login, only authorized users can access and print detailed reports on orders and shelf data for each store and warehouse, ensuring efficient and organized operations.
                         </p>
@@ -38,9 +38,9 @@ const DrogasV2 = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="lg:w-1/2 flex sm:p-10 p-2 h-screen">
-                    <div className={`w-full justify-center items-center flex ${animate ? 'animate-slide-from-right' : ''}`}>
-
+                <div className="lg:w-1/2 flex sm:p-10 p-2 lg:h-screen">
+                    <div className={`w-full justify-center items-center flex h-full ${animate ? 'animate-slide-from-right' : ''}`}>
+                        <p className="text-red-600 ">Video not Available</p>
                     </div>
                 </div>
             </div>

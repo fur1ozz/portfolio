@@ -9,10 +9,10 @@ const FinanceBudgeting = () => {
         <>
             <Header />
             <div className="min-h-screen overflow-hidden bg-pj-400 flex flex-wrap flex-col lg:flex-row">
-                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col">
+                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col justify-center">
                     <div className="flex flex-col items-center">
                         <h1 className={`flex text-5xl font-bold text-pj-100 mt-10 ${animate ? 'animate-slide-from-left' : ''}`}>Finance and Budgeting</h1>
-                        <p className={`text-pj-300 text-lg text-justify sm:mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
+                        <p className={`text-pj-300 text-lg text-justify mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
                             <span className="text-pj-200 font-semibold capitalize">Project Concept: </span>
                             Discover our React-based finance and budgeting website. Registered users can create personalized plans by entering monthly expenses like electricity and water. At month's end, generate a detailed report of your costs. Track investments by logging deposits and withdrawals, and set savings goals to achieve your financial aspirations with ease.
                         </p>
@@ -38,9 +38,9 @@ const FinanceBudgeting = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="lg:w-1/2 flex sm:p-10 p-2 h-screen">
-                    <div className={`w-full justify-center items-center flex ${animate ? 'animate-slide-from-right' : ''}`}>
-
+                <div className="lg:w-1/2 flex sm:p-10 p-2 lg:h-screen">
+                    <div className={`w-full justify-center items-center flex h-full ${animate ? 'animate-slide-from-right' : ''}`}>
+                        <p className="text-red-600 ">Video not Available</p>
                     </div>
                 </div>
             </div>

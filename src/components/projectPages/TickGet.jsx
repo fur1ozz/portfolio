@@ -9,10 +9,10 @@ const TickGet = () => {
         <>
             <Header />
             <div className="min-h-screen overflow-hidden bg-pj-400 flex flex-wrap flex-col lg:flex-row">
-                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col">
+                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col justify-center">
                     <div className="flex flex-col items-center">
                         <h1 className={`flex text-5xl font-bold text-pj-100 mt-10 ${animate ? 'animate-slide-from-left' : ''}`}>TickGet</h1>
-                        <p className={`text-pj-300 text-lg text-justify sm:mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
+                        <p className={`text-pj-300 text-lg text-justify mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
                             <span className="text-pj-200 font-semibold capitalize">Project Concept: </span>
                             Discover our Next.js-powered ticket sales website, where admins can create events and manage ticket types effortlessly. Users can filter and view only upcoming events, purchase tickets upon registration, and track their purchase history seamlessly. Experience efficient and user-friendly ticketing for all your event needs.
                         </p>
@@ -41,9 +41,18 @@ const TickGet = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="lg:w-1/2 flex sm:p-10 p-2 h-screen">
-                    <div className={`w-full justify-center items-center flex ${animate ? 'animate-slide-from-right' : ''}`}>
-                        {/*<video src={videoCoffee} autoPlay loop muted className="rounded-[15px] object-contain shadow-lg shadow-gray-900" />*/}
+                <div className="lg:w-1/2 flex sm:p-10 p-2 lg:h-screen">
+                    <div className={`w-full justify-center items-center flex h-full ${animate ? 'animate-slide-from-right' : ''}`}>
+                        <iframe
+                            width="100%"
+                            src="https://www.youtube.com/embed/0nrzx3chc8c?autoplay=1&mute=1"
+                            title="tickGet"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                            className="aspect-video rounded-[10px]"
+                        ></iframe>
                     </div>
                 </div>
             </div>

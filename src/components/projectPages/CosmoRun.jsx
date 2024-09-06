@@ -11,10 +11,10 @@ const CosmoRun = () => {
         <>
             <Header/>
             <div className="min-h-screen overflow-hidden bg-pj-400 flex flex-wrap flex-col lg:flex-row">
-                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col">
+                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col justify-center">
                     <div className="flex flex-col items-center">
                         <h1 className={`flex text-5xl font-bold text-pj-100 mt-10 ${animate ? 'animate-slide-from-left' : ''}`}>Cosmo Run</h1>
-                        <p className={`text-pj-300 text-lg text-justify sm:mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
+                        <p className={`text-pj-300 text-lg text-justify mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
                             <span className="text-pj-200 font-semibold capitalize">Project Concept: </span>
                             Blast through space in this React Native game reminiscent of Subway Surfers, but with a
                             cosmic twist. Maneuver your 2D ship to dodge planets and collect Cosmo Coins for upgrades.

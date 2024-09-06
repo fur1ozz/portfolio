@@ -9,10 +9,10 @@ const GiraV2 = () => {
         <>
             <Header />
             <div className="min-h-screen overflow-hidden bg-pj-400 flex flex-wrap flex-col lg:flex-row">
-                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col">
+                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col justify-center">
                     <div className="flex flex-col items-center">
                         <h1 className={`flex text-5xl font-bold text-pj-100 mt-10 ${animate ? 'animate-slide-from-left' : ''}`}>Gira V2</h1>
-                        <p className={`text-pj-300 text-lg text-justify sm:mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
+                        <p className={`text-pj-300 text-lg text-justify mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
                             <span className="text-pj-200 font-semibold capitalize">Project Concept: </span>
                             Experience our Jira-inspired project, built with React and Laravel. Featuring a robust user registration and login system, users can add, view, and manage work tasks with ease. Each task includes a title, description, and due date, and can be marked as complete or incomplete, or deleted. The project also includes a work planning calendar to view all task deadlines and a search function for quickly finding specific tasks, streamlining your workflow management.
                         </p>
@@ -45,9 +45,19 @@ const GiraV2 = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="lg:w-1/2 flex sm:p-10 p-2 h-screen">
-                    <div className={`w-full justify-center items-center flex ${animate ? 'animate-slide-from-right' : ''}`}>
-
+                <div className="lg:w-1/2 flex sm:p-10 p-2 lg:h-screen">
+                    <div className={`w-full justify-center items-center flex h-full ${animate ? 'animate-slide-from-right' : ''}`}>
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/qS-SQHVpd4s?autoplay=1&mute=1"
+                            title="GiraV2"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                            className="aspect-video rounded-[10px]"
+                        ></iframe>
                     </div>
                 </div>
             </div>
