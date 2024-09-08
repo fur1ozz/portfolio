@@ -19,8 +19,7 @@ const About = () => {
                     <div className="flex flex-col lg:mt-8 mt-20 sm:mx-20 mx-5">
                         <h1 className="flex text-5xl font-bold text-pj-100 ">Hi, I`m Tomass. I am currently studying at  VTDT</h1>
                         <p className="text-pj-300 text-lg text-justify mt-14 indent-8">
-                            My name is Tomass Vēveris, and I am currently studying programming. Our curriculum encompasses both front-end and back-end web development, enabling us to create comprehensive websites. Additionally, I have expanded my skills by developing a simple game in C#.
-                        </p>
+                            Hi, I’m Tomass Vēveris. I’m currently studying programming, where I’m learning both front-end and back-end web development, so I can build full websites from start to finish. I’ve also been exploring game development and have created a simple game using C#.                        </p>
                         <button onClick={scrollToSecondDiv} type="button" className="w-[100px] mt-10 text-gray-900 bg-[#F7BE38] hover:bg-[#F7BE38]/90 font-medium rounded-lg text-sm px-2 py-2 text-center inline-flex items-center justify-center">
                             Skills ↓
                         </button>
