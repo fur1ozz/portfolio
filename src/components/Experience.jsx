@@ -63,7 +63,7 @@ const Experience = () => {
         <div className="bg-theme-bg min-h-screen font-topper text-theme-text transition-colors duration-300">
             <Header />
             
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
                 
                 <div className="text-center mb-24">
                     <h1 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tight mb-6">

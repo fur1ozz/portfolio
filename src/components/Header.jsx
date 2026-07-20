@@ -34,8 +34,8 @@ const Header = () => {
     const location = useLocation();
 
     return (
-        <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-            <nav className="bg-[#1e1e1e] border border-white/10 backdrop-blur-md rounded-2xl p-1.5 flex items-center gap-1 shadow-2xl">
+        <div className="fixed top-8 left-1/2 -translate-x-1/2 z-[60]">
+            <nav className="bg-[#1e1e1e]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-1.5 flex items-center gap-1 shadow-2xl">
                 <NavItem to="/about" icon={Home} label="Home" currentPath={location.pathname} />
                 <NavItem to="/projects" icon={Folder} label="Personal Projects" currentPath={location.pathname} />
                 <NavItem to="/experience" icon={Briefcase} label="Experience" currentPath={location.pathname} />

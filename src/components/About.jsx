@@ -15,7 +15,7 @@ const About = () => {
                     
                     {/* Left Sticky Sidebar */}
                     <div className="lg:w-[30%] max-w-[380px] mx-auto lg:mx-0 relative z-10">
-                        <div className="lg:sticky lg:top-32 bg-theme-text text-theme-bg rounded-[32px] p-8 shadow-xl flex flex-col items-center text-center transition-colors duration-300">
+                        <div className="lg:sticky lg:top-8 bg-theme-text text-theme-bg rounded-[32px] p-8 shadow-xl flex flex-col items-center text-center transition-colors duration-300">
                             
                             {/* Image Container */}
                             <div className="relative w-full aspect-[4/5] mb-6 z-0">
@@ -50,7 +50,7 @@ const About = () => {
                     </div>
                     
                     {/* Right Scrollable Content */}
-                    <div className="lg:flex-1 flex flex-col gap-24 relative z-0">
+                    <div className="lg:flex-1 flex flex-col gap-24 relative z-0 pt-0 lg:pt-12">
                         
                         {/* Hero Info */}
                         <div className="mt-4 lg:mt-8">

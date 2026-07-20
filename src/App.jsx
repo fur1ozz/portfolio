@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Navigate, Route, Routes} from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate, Outlet, ScrollRestoration } from 'react-router-dom';
 import Projects from "./components/Projects";
 import CosmoRun from "./components/projectPages/CosmoRun";
 import MemoryGame from "./components/projectPages/MemoryGame";
@@ -10,36 +10,42 @@ import DrogasV2 from "./components/projectPages/DrogasV2";
 import GiraV2 from "./components/projectPages/GiraV2";
 import FinanceBudgeting from "./components/projectPages/Finance&Budgeting";
 
+// Layout component wraps everything and includes the built-in ScrollRestoration
+const RootLayout = () => {
+  return (
+    <div className="min-h-screen bg-theme-bg font-topper transition-colors duration-300">
+      <ScrollRestoration />
+      <Outlet /> {/* This is where the specific page components will render */}
+    </div>
+  );
+};
+
+// Modern Data Router setup
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      { index: true, element: <Navigate to="/about" replace /> },
+      { path: "about", element: <About /> },
+      { path: "projects", element: <Projects /> },
+      { path: "experience", element: <Experience /> },
+      
+      { path: "projects/cosmo-run", element: <CosmoRun /> },
+      { path: "projects/memory-game", element: <MemoryGame /> },
+      { path: "projects/coffee-shop", element: <CoffeeShop /> },
+      { path: "projects/tick-get", element: <TickGet /> },
+      { path: "projects/drogas-v2", element: <DrogasV2 /> },
+      { path: "projects/gira-v2", element: <GiraV2 /> },
+      { path: "projects/finance-budgeting", element: <FinanceBudgeting /> },
+      
+      { path: "*", element: <Navigate to="/about" replace /> },
+    ],
+  },
+]);
 
 function App() {
-  return (
-      <Router>
-          <div className="min-h-screen bg-theme-bg font-topper transition-colors duration-300">
-              <Routes>
-                  <Route
-                      path="/"
-                      element={<Navigate to="/about" />}
-                  />
-                  <Route
-                      path="*"
-                      element={<Navigate to="/about" />}
-                  />
-                  <Route exact path="/about" element = {<About />}/>
-                  <Route path="/projects" element = {<Projects />}/>
-                  <Route path="/experience" element = {<Experience />}/>
-
-                  {/*Each Project*/}
-                  <Route path="/projects/cosmo-run" element = {<CosmoRun />}/>
-                  <Route path="/projects/memory-game" element = {<MemoryGame />}/>
-                  <Route path="/projects/coffee-shop" element = {<CoffeeShop />}/>
-                  <Route path="/projects/tick-get" element = {<TickGet />}/>
-                  <Route path="/projects/drogas-v2" element = {<DrogasV2 />}/>
-                  <Route path="/projects/gira-v2" element = {<GiraV2 />}/>
-                  <Route path="/projects/finance-budgeting" element = {<FinanceBudgeting />}/>
-              </Routes>
-          </div>
-      </Router>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
