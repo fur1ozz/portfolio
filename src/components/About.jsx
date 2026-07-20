@@ -21,7 +21,7 @@ const About = () => {
                                 {/* Dotted lines overlay like in the reference image (optional aesthetic) */}
                                 <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-dashed border-[#F7BE38] rounded-tl-full opacity-50 z-0"></div>
                                 <img 
-                                    src="/images/rally-hats.jpeg" 
+                                    src="/images/tomass-veveris.jpg"
                                     alt="Tomass Vēveris" 
                                     className="w-full h-full object-cover relative z-10 scale-105 hover:scale-110 transition-transform duration-500" 
                                 />
@@ -71,11 +71,11 @@ const About = () => {
                                     <p className="text-xs text-pj-300 uppercase tracking-widest text-left font-semibold">Years of<br/>Experience</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">+12</h3>
+                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">10+</h3>
                                     <p className="text-xs text-pj-300 uppercase tracking-widest text-left font-semibold">Projects<br/>Completed</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">+2</h3>
+                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">2+</h3>
                                     <p className="text-xs text-pj-300 uppercase tracking-widest text-left font-semibold">Major Enterprise<br/>Features</p>
                                 </div>
                             </div>
