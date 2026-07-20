@@ -15,7 +15,7 @@ const SkillCard = ({ title, skills, icon: Icon, colorClass, textClass }) => (
 
 const Skills = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
             <SkillCard 
                 title="Frontend" 
                 skills={['React', 'Next.js', 'Tailwind', 'TypeScript', 'Redux']} 
