@@ -34,7 +34,7 @@ const About = () => {
                             </div>
                             
                             <p className="text-pj-300 text-sm mb-8 px-2 font-medium">
-                                A Software Engineer with almost 2 years of experience at DeskTime, developing innovative solutions.
+                                A Software Engineer specializing in end-to-end web development, currently building impactful features at DeskTime.
                             </p>
                             
                             <div className="flex gap-4">
@@ -61,22 +61,22 @@ const About = () => {
                                 <span className="text-gray-300 dark:text-[#222222]">Engineer</span>
                             </h1>
                             <p className="text-pj-300 text-lg mt-8 max-w-xl leading-relaxed">
-                                Passionate about creating intuitive and engaging user experiences. I specialize in transforming ideas into beautifully crafted, reliable products. I currently have almost 2 years of professional experience working at DeskTime.
+                                I bridge the gap between robust backend architecture and engaging frontend interfaces. Currently acting as a core developer at DeskTime, I've shipped major platform features like complex billing reworks and IP detection systems, while maintaining databases and leading UI initiatives.
                             </p>
                             
                             {/* Stats */}
                             <div className="flex gap-12 mt-12">
                                 <div>
-                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">+2</h3>
+                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">2</h3>
                                     <p className="text-xs text-pj-300 uppercase tracking-widest text-left font-semibold">Years of<br/>Experience</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">+10</h3>
+                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">+12</h3>
                                     <p className="text-xs text-pj-300 uppercase tracking-widest text-left font-semibold">Projects<br/>Completed</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">+1</h3>
-                                    <p className="text-xs text-pj-300 uppercase tracking-widest text-left font-semibold">Current<br/>Company</p>
+                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">+2</h3>
+                                    <p className="text-xs text-pj-300 uppercase tracking-widest text-left font-semibold">Major Enterprise<br/>Features</p>
                                 </div>
                             </div>
                         </div>
