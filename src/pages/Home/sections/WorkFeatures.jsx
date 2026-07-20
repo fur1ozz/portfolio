@@ -15,9 +15,12 @@ const FeatureItem = ({ title, description, link }) => {
                         <h3 className="text-[18px] font-bold text-theme-text transition-colors group-hover:text-accent">{title}</h3>
                         <ExternalLink size={14} className="text-theme-muted opacity-50 group-hover:opacity-100 group-hover:text-accent transition-all" />
                     </div>
-                    <p className="text-theme-muted text-sm leading-relaxed opacity-90">
+                    <p className="text-theme-muted text-sm leading-relaxed opacity-90 mb-3">
                         {description}
                     </p>
+                    <span className="inline-flex items-center text-xs font-semibold text-theme-muted group-hover:text-accent transition-colors uppercase tracking-wider">
+                        Read more
+                    </span>
                 </div>
                 <div className="text-theme-muted/50 group-hover:text-accent transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 mt-1 flex-shrink-0">
                     <ArrowUpRight size={20} strokeWidth={2.5} />
@@ -31,12 +34,12 @@ const WorkFeatures = () => {
     const features = [
         {
             title: "IP Location Detection",
-            description: "I built a feature that tracks and maps out user IP addresses. This helps the platform know exactly where activity is coming from, which is super important for spotting suspicious logins and giving users better regional data.",
+            description: "I built a feature that tracks and maps user locations based on authorized IP addresses configured in the account settings. This allows account owners to verify exactly where their team is working from, providing better visibility for remote work and improving security compliance.",
             link: "https://help.desktime.com/hc/en-us/articles/34605873392797-Using-IP-location-tracking"
         },
         {
             title: "Coupon Flow Rework",
-            description: "I completely rebuilt the way discount coupons work under the hood. The old system was hard to manage, so I rewrote the logic to handle complicated discount rules easily and made sure it connects smoothly to the checkout and payment process without failing.",
+            description: "I refactored the underlying logic of how discount coupons work. The old system was difficult to maintain, so I rewrote the core flow to make it significantly smoother and more reliable, greatly simplifying how our admins create and manage discount campaigns.",
             link: "https://help.desktime.com/hc/en-us/articles/4413027602321-Applying-a-promo-code"
         }
     ];
