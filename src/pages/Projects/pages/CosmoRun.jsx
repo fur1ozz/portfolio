@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import videoCosmo from '../../assets/cosmoRun.mp4'
-import Header from "../Header";
-import useAnimateOnMount from "../../utils/UseAnimateOnMount";
+import videoCosmo from '../../../assets/cosmoRun.mp4'
+import Header from "../../../layouts/Header";
+import useAnimateOnMount from "../../../utils/UseAnimateOnMount";
 
 
 const CosmoRun = () => {

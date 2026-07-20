@@ -1,9 +1,8 @@
 import React from 'react';
-import Header from "../Header";
-import videoCosmo from "../../assets/cosmoRun.mp4";
-import useAnimateOnMount from "../../utils/UseAnimateOnMount";
+import Header from "../../../layouts/Header";
+import useAnimateOnMount from "../../../utils/UseAnimateOnMount";
 
-const MemoryGame = () => {
+const GiraV2 = () => {
     const animate = useAnimateOnMount();
 
     return (
@@ -12,10 +11,11 @@ const MemoryGame = () => {
             <div className="min-h-screen overflow-hidden bg-pj-400 flex flex-wrap flex-col lg:flex-row">
                 <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col justify-center">
                     <div className="flex flex-col items-center">
-                        <h1 className={`flex text-5xl font-bold text-pj-100 mt-10 ${animate ? 'animate-slide-from-left' : ''}`}>Flip Meha</h1>
+                        <h1 className={`flex text-5xl font-bold text-pj-100 mt-10 ${animate ? 'animate-slide-from-left' : ''}`}>Gira V2</h1>
                         <p className={`text-pj-300 text-lg text-justify mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
                             <span className="text-pj-200 font-semibold capitalize">Project Concept: </span>
-                            Dive into the world of memory mastery with this React-powered flip game. Match car logos in a race against time to test your recall skills. With seamless login and registration features, enjoy personalized gameplay. Experience the thrill of unlocking new levels and features as you sharpen your memory and become the ultimate car logo connoisseur!                        </p>
+                            Experience our Jira-inspired project, built with React and Laravel. Featuring a robust user registration and login system, users can add, view, and manage work tasks with ease. Each task includes a title, description, and due date, and can be marked as complete or incomplete, or deleted. The project also includes a work planning calendar to view all task deadlines and a search function for quickly finding specific tasks, streamlining your workflow management.
+                        </p>
                         <div className={`flex flex-col mt-16 ${animate ? 'animate-slide-from-left' : ''}`}>
                             <h2 className="flex text-4xl text-pj-200 font-semibold justify-center">Stack</h2>
                             <div className="flex mt-2">
@@ -34,13 +34,30 @@ const MemoryGame = () => {
                     <div className={`mt-16 mx-5 ${animate ? 'animate-slide-from-left' : ''}`}>
                         <p className="text-pj-200 font-medium text-lg">Notes:</p>
                         <ul className="ml-6 mt-2 text-pj-300">
-                            <p>This project remains unfinished, currently about halfway complete. Time flew by, and I have not yet had the opportunity to complete it.</p>
+                            <p>This project was my first attempt at using both the Laravel framework and Tailwind CSS. Through this project, I developed a strong appreciation for both Laravel and Tailwind.</p>
+                        </ul>
+                    </div>
+                    <div className={`mt-16 mx-5 ${animate ? 'animate-slide-from-left' : ''}`}>
+                        <p className="text-pj-200 font-medium text-lg">Individuals who played a role in this project:</p>
+                        <ul className="list-decimal ml-6 mt-2 text-pj-300">
+                            <li>Mārcis Jansons</li>
+                            <li>Alekss Velvelis</li>
                         </ul>
                     </div>
                 </div>
                 <div className="lg:w-1/2 flex sm:p-10 p-2 lg:h-screen">
                     <div className={`w-full justify-center items-center flex h-full ${animate ? 'animate-slide-from-right' : ''}`}>
-                        <p className="text-red-600 ">Video not Available</p>
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            src="https://www.youtube.com/embed/qS-SQHVpd4s?autoplay=1&mute=1"
+                            title="GiraV2"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                            className="aspect-video rounded-[10px]"
+                        ></iframe>
                     </div>
                 </div>
             </div>
@@ -48,4 +65,4 @@ const MemoryGame = () => {
     );
 };
 
-export default MemoryGame;
+export default GiraV2;
