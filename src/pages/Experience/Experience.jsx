@@ -86,7 +86,7 @@ const Experience = () => {
                             "Serve as the primary developer during customer support rotations, resolving critical issues, debugging systems, and directly addressing user feedback.",
                             "Maintain databases and regularly orchestrate Admin panel and public page upgrades."
                         ]}
-                        tech={['Inertia', 'React', 'TypeScript', 'Blade', 'SCSS', 'MySQL', 'PHP', 'Laravel']}
+                        tech={['React', 'TypeScript', 'SCSS', 'PHP', 'Laravel', 'Inertia.js', 'MySQL']}
                         isInternship={false}
                     />
 
@@ -94,13 +94,13 @@ const Experience = () => {
                         title="Software Engineering Intern"
                         company="DeskTime"
                         period="November 2024 - May 2025"
-                        description="Started my journey deeply immersing myself in the DeskTime ecosystem, quickly transitioning from learning the codebase to contributing to live production features."
+                        description="Started my journey by developing an internal side project to learn the DeskTime ecosystem, eventually transitioning to real-world tasks on the main platform."
                         highlights={[
-                            "Assisted in full-stack development tasks, learning the primary stack (Laravel, Vue/React, MySQL).",
-                            "Resolved bugs and optimized UI components across various public-facing pages.",
-                            "Gained hands-on experience handling data structures and customer support escalation rotations."
+                            "Built an internal side project to master the primary technology stack (Laravel, React, MySQL).",
+                            "Transitioned to the core application, handling UI bug fixes and progressively taking on larger development tasks.",
+                            "Assisted senior developers with investigating and resolving user-reported bugs."
                         ]}
-                        tech={['PHP', 'React', 'SCSS', 'MySQL', 'Git']}
+                        tech={['React', 'JavaScript', 'Blade', 'Bootstrap', 'PHP', 'Laravel']}
                         isInternship={true}
                     />
                 </div>
