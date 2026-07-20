@@ -18,10 +18,6 @@ export default {
         contact: {"100":"#1a1a1a", "200":"#414141", "test":"#646464"}
       },
       backgroundImage: {
-        'parallax1': 'url("../public/images/hero/audi_background.jpeg")',
-        'parallax2': 'url("../public/images/hero/audi_bridge.png")',
-        'parallax3': 'url("../public/images/hero/audi_object.png")',
-
         'nextProjects2': 'url("../public/images/projects/nextProjects2.jpg")',
         'lifting': 'url("../public/images/projects/lifting.jpg")',
         'finance': 'url("../public/images/projects/finance.jpg")',
@@ -31,8 +27,6 @@ export default {
         'coffee': 'url("../public/images/projects/coffee.jpg")',
         'memory': 'url("../public/images/projects/memory.jpg")',
         'rocket': 'url("../public/images/projects/rocket.jpg")',
-
-        'iphone': 'url("../public/images/iphoneCroped.png")',
 
         'lancia': 'url("../public/images/lanciaContact.jpg")',
       },

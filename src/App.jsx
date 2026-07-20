@@ -5,7 +5,7 @@ import MemoryGame from "./components/projectPages/MemoryGame";
 import CoffeeShop from "./components/projectPages/CoffeeShop";
 import TickGet from "./components/projectPages/TickGet";
 import About from "./components/About";
-import Contact from "./components/Contact";
+import Experience from "./components/Experience";
 import DrogasV2 from "./components/projectPages/DrogasV2";
 import GiraV2 from "./components/projectPages/GiraV2";
 import FinanceBudgeting from "./components/projectPages/Finance&Budgeting";
@@ -26,7 +26,7 @@ function App() {
                   />
                   <Route exact path="/about" element = {<About />}/>
                   <Route path="/projects" element = {<Projects />}/>
-                  <Route path="/contact" element = {<Contact />}/>
+                  <Route path="/experience" element = {<Experience />}/>
 
                   {/*Each Project*/}
                   <Route path="/projects/cosmo-run" element = {<CosmoRun />}/>

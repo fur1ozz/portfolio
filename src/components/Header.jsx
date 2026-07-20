@@ -38,9 +38,7 @@ const Header = () => {
             <nav className="bg-[#1e1e1e] border border-white/10 backdrop-blur-md rounded-2xl p-1.5 flex items-center gap-1 shadow-2xl">
                 <NavItem to="/about" icon={Home} label="Home" currentPath={location.pathname} />
                 <NavItem to="/projects" icon={Folder} label="Projects" currentPath={location.pathname} />
-                {/* We can add Work Experience later when the page is created */}
-                {/* <NavItem to="/work" icon={Briefcase} label="Experience" currentPath={location.pathname} /> */}
-                <NavItem to="/contact" icon={Mail} label="Contact" currentPath={location.pathname} />
+                <NavItem to="/experience" icon={Briefcase} label="Experience" currentPath={location.pathname} />
                 
                 <div className="w-[1px] h-8 bg-white/10 mx-1"></div>
                 
