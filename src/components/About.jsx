@@ -7,7 +7,7 @@ import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
 const About = () => {
     return (
-        <div className="bg-[#fff] dark:bg-pj-400 min-h-screen font-topper text-pj-100">
+        <div className="bg-theme-bg min-h-screen font-topper text-theme-text transition-colors duration-300">
             <Header />
             
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
@@ -15,36 +15,37 @@ const About = () => {
                     
                     {/* Left Sticky Sidebar */}
                     <div className="lg:w-1/3 relative z-10">
-                        <div className="lg:sticky lg:top-32 bg-white dark:bg-[#151515] rounded-[32px] p-8 shadow-xl border border-gray-100 dark:border-white/5 flex flex-col items-center text-center">
+                        <div className="lg:sticky lg:top-32 bg-theme-card rounded-[32px] p-8 shadow-xl border border-gray-100 dark:border-white/5 flex flex-col items-center text-center transition-colors duration-300">
                             
-                            <div className="w-full aspect-[4/5] bg-[#F7BE38]/20 rounded-2xl mb-6 overflow-hidden relative">
-                                {/* Dotted lines overlay like in the reference image (optional aesthetic) */}
-                                <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-dashed border-[#F7BE38] rounded-tl-full opacity-50 z-0"></div>
-                                <img 
-                                    src="/images/tomass-veveris.jpg"
-                                    alt="Tomass Vēveris" 
-                                    className="w-full h-full object-cover relative"
-                                />
+                            {/* Image Container with explicit boundary mapping */}
+                            <div className="relative w-full aspect-[4/5] mb-6 z-0">
+                                {/* Dotted lines overlay moved OUTSIDE the overflow hidden to ensure they show up */}
+                                <div className="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-dashed border-accent rounded-tl-full opacity-60 z-0"></div>
+                                <div className="absolute -bottom-6 -right-6 w-24 h-24 border-b-2 border-r-2 border-dashed border-accent rounded-br-full opacity-60 z-0"></div>
+                                
+                                <div className="w-full h-full bg-accent/10 rounded-[24px] overflow-hidden relative z-10">
+                                    <img 
+                                        src="/images/tomass-veveris.jpg"
+                                        alt="Tomass Vēveris" 
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
                             </div>
                             
-                            <h2 className="text-3xl font-bold mb-1">Tomass Vēveris</h2>
+                            <h2 className="text-3xl font-bold mb-2">Tomass Vēveris</h2>
                             
-                            <div className="w-10 h-10 bg-[#F7BE38] text-white rounded-full flex items-center justify-center my-4 shadow-lg shadow-[#F7BE38]/30">
-                                <span className="text-xl leading-none">🔥</span>
-                            </div>
-                            
-                            <p className="text-pj-300 text-sm mb-8 px-2 font-medium">
+                            <p className="text-theme-muted text-sm mb-8 px-2 font-medium mt-4">
                                 A Software Engineer specializing in end-to-end web development, currently building impactful features at DeskTime.
                             </p>
                             
                             <div className="flex gap-4">
-                                <a href="https://www.linkedin.com/in/tomass-v%C4%93veris-74bb73363/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#F7BE38] hover:bg-[#F7BE38] hover:text-white transition-colors">
+                                <a href="https://www.linkedin.com/in/tomass-v%C4%93veris-74bb73363/" target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-theme-muted hover:bg-accent hover:border-accent hover:text-white transition-all shadow-sm">
                                     <FaLinkedin size={18} />
                                 </a>
-                                <a href="https://instagram.com/veeveriss" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#F7BE38] hover:bg-[#F7BE38] hover:text-white transition-colors">
+                                <a href="https://instagram.com/veeveriss" target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-theme-muted hover:bg-accent hover:border-accent hover:text-white transition-all shadow-sm">
                                     <FaInstagram size={18} />
                                 </a>
-                                <a href="https://github.com/fur1ozz" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#F7BE38] hover:bg-[#F7BE38] hover:text-white transition-colors">
+                                <a href="https://github.com/fur1ozz" target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-theme-muted hover:bg-accent hover:border-accent hover:text-white transition-all shadow-sm">
                                     <FaGithub size={18} />
                                 </a>
                             </div>
@@ -58,9 +59,9 @@ const About = () => {
                         <div className="mt-4 lg:mt-8">
                             <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-extrabold uppercase leading-[0.9] tracking-tight">
                                 Software <br />
-                                <span className="text-gray-300 dark:text-[#222222]">Engineer</span>
+                                <span className="text-theme-muted opacity-40">Engineer</span>
                             </h1>
-                            <p className="text-pj-300 text-lg mt-8 max-w-xl leading-relaxed">
+                            <p className="text-theme-muted text-lg mt-8 max-w-xl leading-relaxed">
                                 I bridge the gap between robust backend architecture and engaging frontend interfaces. Currently acting as a core developer at DeskTime, I've shipped major platform features like complex billing reworks and IP detection systems, while maintaining databases and leading UI initiatives.
                             </p>
                             
@@ -68,15 +69,15 @@ const About = () => {
                             <div className="flex gap-12 mt-12">
                                 <div>
                                     <h3 className="text-5xl font-bold mb-2 tracking-tighter">2</h3>
-                                    <p className="text-xs text-pj-300 uppercase tracking-widest text-left font-semibold">Years of<br/>Experience</p>
+                                    <p className="text-xs text-theme-muted uppercase tracking-widest text-left font-semibold">Years of<br/>Experience</p>
                                 </div>
                                 <div>
                                     <h3 className="text-5xl font-bold mb-2 tracking-tighter">10+</h3>
-                                    <p className="text-xs text-pj-300 uppercase tracking-widest text-left font-semibold">Projects<br/>Completed</p>
+                                    <p className="text-xs text-theme-muted uppercase tracking-widest text-left font-semibold">Projects<br/>Completed</p>
                                 </div>
                                 <div>
                                     <h3 className="text-5xl font-bold mb-2 tracking-tighter">2+</h3>
-                                    <p className="text-xs text-pj-300 uppercase tracking-widest text-left font-semibold">Major Enterprise<br/>Features</p>
+                                    <p className="text-xs text-theme-muted uppercase tracking-widest text-left font-semibold">Major Enterprise<br/>Features</p>
                                 </div>
                             </div>
                         </div>

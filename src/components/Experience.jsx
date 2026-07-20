@@ -12,38 +12,38 @@ const ExperienceCard = ({ title, company, period, description, highlights, tech,
             <div className={`md:flex items-center justify-between w-full ${isInternship ? 'md:flex-row-reverse' : ''} mb-16`}>
                 
                 {/* Timeline Dot (Mobile & Desktop) */}
-                <div className="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-[#F7BE38] border-4 border-white dark:border-[#151515] -translate-x-1/2 flex items-center justify-center z-10 top-0 shadow-lg shadow-[#F7BE38]/30">
+                <div className="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-accent border-4 border-theme-bg -translate-x-1/2 flex items-center justify-center z-10 top-0 shadow-lg shadow-accent/30">
                     <Briefcase size={14} className="text-white" />
                 </div>
 
                 {/* Content Card */}
                 <div className="md:w-5/12 w-full">
-                    <div className="bg-gray-50 dark:bg-[#1a1a1a] p-8 rounded-[24px] border border-gray-100 dark:border-white/5 shadow-xl shadow-gray-200/50 dark:shadow-black/20 hover:-translate-y-2 transition-transform duration-300">
+                    <div className="bg-theme-card p-8 rounded-[24px] border border-gray-100 dark:border-white/5 shadow-xl shadow-black/5 hover:-translate-y-2 transition-transform duration-300">
                         
-                        <div className="flex items-center gap-2 text-[#F7BE38] font-bold text-sm uppercase tracking-wider mb-3">
+                        <div className="flex items-center gap-2 text-accent font-bold text-sm uppercase tracking-wider mb-3">
                             <Calendar size={16} />
                             <span>{period}</span>
                         </div>
                         
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{title}</h3>
-                        <h4 className="text-lg font-medium text-gray-500 dark:text-gray-400 mb-6">{company}</h4>
+                        <h3 className="text-2xl font-bold text-theme-text mb-1">{title}</h3>
+                        <h4 className="text-lg font-medium text-theme-muted mb-6">{company}</h4>
                         
-                        <p className="text-gray-600 dark:text-gray-300 text-sm mb-6 leading-relaxed">
+                        <p className="text-theme-text opacity-80 text-sm mb-6 leading-relaxed">
                             {description}
                         </p>
 
                         <div className="mb-6 space-y-2">
                             {highlights.map((highlight, index) => (
                                 <div key={index} className="flex items-start gap-2">
-                                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#F7BE38] flex-shrink-0"></div>
-                                    <p className="text-sm text-gray-600 dark:text-gray-300">{highlight}</p>
+                                    <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></div>
+                                    <p className="text-sm text-theme-text opacity-80">{highlight}</p>
                                 </div>
                             ))}
                         </div>
 
                         <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-200 dark:border-white/10">
                             {tech.map((t, index) => (
-                                <span key={index} className="px-3 py-1 bg-white dark:bg-[#252525] border border-gray-200 dark:border-white/5 rounded-full text-xs font-semibold text-gray-700 dark:text-gray-300 shadow-sm">
+                                <span key={index} className="px-3 py-1 bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/5 rounded-full text-xs font-semibold text-theme-text shadow-sm">
                                     {t}
                                 </span>
                             ))}
@@ -60,16 +60,16 @@ const ExperienceCard = ({ title, company, period, description, highlights, tech,
 
 const Experience = () => {
     return (
-        <div className="bg-[#fff] dark:bg-pj-400 min-h-screen font-topper text-pj-100">
+        <div className="bg-theme-bg min-h-screen font-topper text-theme-text transition-colors duration-300">
             <Header />
             
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-24">
                 
                 <div className="text-center mb-24">
                     <h1 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tight mb-6">
-                        Work <span className="text-gray-300 dark:text-[#222222]">Experience</span>
+                        Work <span className="text-theme-muted opacity-40">Experience</span>
                     </h1>
-                    <p className="text-pj-300 text-lg max-w-2xl mx-auto">
+                    <p className="text-theme-muted text-lg max-w-2xl mx-auto">
                         My professional journey building robust, user-centric software solutions at scale.
                     </p>
                 </div>

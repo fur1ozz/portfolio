@@ -5,15 +5,26 @@
 @tailwind utilities;
 
 :root {
-    --pj-100: #252525;
-    --pj-200: #363636;
-    --pj-300: #5e5e5e;
-    --pj-400: #efefef;
+    --bg-main: #fcfcfc;
+    --bg-card: #ffffff;
+    --text-main: #171717;
+    --text-muted: #737373;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
 }
 
 .dark {
-    --pj-100: #ffffff;
-    --pj-200: #d3d3d3;
-    --pj-300: #afafaf;
-    --pj-400: #0c0c0c;
+    --bg-main: #0a0a0a;
+    --bg-card: #171717;
+    --text-main: #f5f5f5;
+    --text-muted: #a3a3a3;
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
+}
+
+html, body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    /* This prevents the white bounce overscroll in dark mode on macOS/iOS */
+    overscroll-behavior-y: none;
 }

@@ -8,14 +8,16 @@ export default {
     extend: {
       colors: {
         primary: {"50":"#fff1f2","100":"#ffe4e6","200":"#fecdd3","300":"#fda4af","400":"#fb7185","500":"#ff2f43","600":"#e11d48","700":"#be123c","800":"#9f1239","900":"#881337","950":"#4c0519"},
-        low: {"100":"rgba(124,124,124,0.77)", "200":"rgba(192,192,192,0.77)"},
-        pj: {
-          100: "var(--pj-100)",
-          200: "var(--pj-200)",
-          300: "var(--pj-300)",
-          400: "var(--pj-400)",
+        accent: {
+          DEFAULT: 'var(--accent)',
+          hover: 'var(--accent-hover)',
         },
-        contact: {"100":"#1a1a1a", "200":"#414141", "test":"#646464"}
+        theme: {
+          bg: 'var(--bg-main)',
+          card: 'var(--bg-card)',
+          text: 'var(--text-main)',
+          muted: 'var(--text-muted)',
+        },
       },
       backgroundImage: {
         'nextProjects2': 'url("../public/images/projects/nextProjects2.jpg")',

@@ -14,7 +14,7 @@ import FinanceBudgeting from "./components/projectPages/Finance&Budgeting";
 function App() {
   return (
       <Router>
-          <div className="min-h-screen bg-[#fff] dark:bg-pj-400 font-topper">
+          <div className="min-h-screen bg-theme-bg font-topper transition-colors duration-300">
               <Routes>
                   <Route
                       path="/"
