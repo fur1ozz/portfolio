@@ -81,16 +81,15 @@ const Home = () => {
                         </div>
 
                         {/* Skills Section */}
-                        <div id="skills-section">
+                        <div id="skills-section" className="scroll-mt-32">
                             <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-12">
-                                My<br/>
-                                <span className="text-theme-muted opacity-40">Skills</span>
+                                My <span className="text-theme-muted opacity-40">Skills</span>
                             </h2>
                             <Skills />
                         </div>
                         
                         {/* Work Features Section */}
-                        <div id="features-section">
+                        <div id="features-section" className="scroll-mt-32">
                             <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-8">
                                 Features I've built<br/>
                                 <span className="text-theme-muted opacity-40">For DeskTime</span>
@@ -99,7 +98,7 @@ const Home = () => {
                         </div>
                         
                         {/* Contact Section */}
-                        <div id="contact-section">
+                        <div id="contact-section" className="scroll-mt-32">
                             <Contact isEmbedded={true} />
                         </div>
                     </div>

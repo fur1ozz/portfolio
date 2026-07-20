@@ -4,10 +4,9 @@ import { Home, Folder, Briefcase, Mail, Moon, Sun, Star } from "lucide-react";
 import { useDarkMode } from "../utils/HeaderUtils";
 
 const NavItem = ({ to, icon: Icon, label, currentPath, onClick }) => {
-    // If it's a hash link (#features-section), it's active if the current hash matches OR if we clicked it
-    const isActive = to.startsWith('#') 
-        ? window.location.hash === to
-        : currentPath === to;
+    // Hash links (like #features-section) should not act as active routes
+    // Only real routes (like /about or /experience) can be active
+    const isActive = !to.startsWith('#') && currentPath === to;
 
     const Element = to.startsWith('#') ? 'button' : Link;
     

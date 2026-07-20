@@ -1,8 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
-import Header from "../../layouts/Header";
 import emailjs from "@emailjs/browser";
 import '../../SliderStyles/Contact.css'
-import useAnimateOnMount from "../../utils/UseAnimateOnMount";
 
 const Contact = ({ isEmbedded = false }) => {
     const form = useRef();
@@ -14,7 +12,6 @@ const Contact = ({ isEmbedded = false }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState('');
     const [isFormValid, setIsFormValid] = useState(false);
-    const animate = useAnimateOnMount();
 
     useEffect(() => {
         const isValid = formData.from_name.trim() !== '' &&
@@ -64,7 +61,7 @@ const Contact = ({ isEmbedded = false }) => {
 
     return (
         <div className="w-full">
-            <div className={`w-full flex flex-col justify-start mb-8 ${animate ? 'animate-slide-from-left' : ''}`}>
+            <div className="w-full flex flex-col justify-start mb-8">
                 <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9]">
                     Let's Work<br/>
                     <span className="text-theme-muted opacity-40">Together</span>
@@ -74,8 +71,7 @@ const Contact = ({ isEmbedded = false }) => {
             <form 
                 ref={form} 
                 onSubmit={sendEmail} 
-                className={`flex flex-col w-full transition-colors duration-300 ${animate ? 'animate-slide-from-left' : ''}`}
-                style={{ '--animation-delay': `${0.1}s` }}
+                className="flex flex-col w-full transition-colors duration-300"
             >
                 <div className="flex flex-col md:flex-row gap-6 mb-6">
                     <div className="flex-1">
