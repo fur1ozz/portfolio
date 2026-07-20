@@ -1,72 +1,45 @@
-import React, { useEffect, useRef, useState } from 'react';
-import "../SliderStyles/Skills.css";
+import React from 'react';
+import { MonitorSmartphone, Database, Layout, Terminal } from "lucide-react";
 
-const Item = ({ name, proc, animate }) => {
-    return (
-        <div className="md:mx-5">
-            <div className="flex justify-start text-xl relative">
-                <span className="text-pj-100">{name}</span>
-                <span className="absolute text-pj-100" style={{ marginLeft: `${proc-5}%` }}>{proc}%</span>
-            </div>
-            <div className="my-2 rounded-[10px] h-[20px] w-full bg-low-200 dark:bg-[#2a2a2a] overflow-hidden">
-                <div
-                    className={`bg-gradient-to-r from-primary-500 to-[#F7BE38] h-full rounded-[10px] ${animate ? 'animate-slide-from-left-skill' : ''}`}
-                    style={{ width: `${proc}%` }}
-                ></div>
-            </div>
+const SkillCard = ({ title, skills, icon: Icon, colorClass }) => (
+    <div className={`p-8 rounded-[32px] flex flex-col justify-between min-h-[240px] ${colorClass} transition-all duration-300 hover:-translate-y-2 hover:shadow-xl`}>
+        <div className="bg-black/10 dark:bg-white/20 w-14 h-14 rounded-full flex items-center justify-center mb-8 shadow-sm backdrop-blur-sm">
+            <Icon size={28} className="opacity-80" />
         </div>
-    );
-}
+        <div>
+            <h3 className="text-2xl font-extrabold uppercase mb-2 tracking-tight leading-tight">{title}</h3>
+            <p className="font-medium text-black/70 dark:text-white/80 text-sm uppercase tracking-wider">{skills.join(', ')}</p>
+        </div>
+    </div>
+);
 
 const Skills = () => {
-    const [animate, setAnimate] = useState(false);
-    const skillsRef = useRef(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setAnimate(true);
-                    observer.unobserve(skillsRef.current);
-                }
-            },
-            { threshold: 0.1 }
-        );
-
-        if (skillsRef.current) {
-            observer.observe(skillsRef.current);
-        }
-
-        return () => {
-            if (skillsRef.current) {
-                observer.unobserve(skillsRef.current);
-            }
-        };
-    }, []);
-
     return (
-        <div ref={skillsRef} className="sm:mx-20 mx-5">
-            <div>
-                <div className="text-2xl text-pj-100 font-semibold mb-4 mt-10">Languages</div>
-                <div className="grid md:grid-cols-2 grid-cols-1">
-                    <Item name="HTML" proc={99} animate={animate} />
-                    <Item name="CSS" proc={99} animate={animate} />
-                    <Item name="Javascript" proc={85} animate={animate} />
-                    <Item name="PHP" proc={85} animate={animate} />
-                    <Item name="Sql" proc={90} animate={animate} />
-                    <Item name="C#" proc={35} animate={animate} />
-                </div>
-            </div>
-            <div>
-                <div className="text-2xl text-pj-100 font-semibold mb-4 mt-10">Frameworks, Libraries and Supersets</div>
-                <div className="grid md:grid-cols-2 grid-cols-1">
-                    <Item name="React" proc={90} animate={animate} />
-                    <Item name="Tailwind" proc={90} animate={animate} />
-                    <Item name="Next.js" proc={45} animate={animate} />
-                    <Item name="Laravel" proc={75} animate={animate} />
-                    <Item name="Typescript" proc={65} animate={animate} />
-                </div>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+            <SkillCard 
+                title="Frontend & UI" 
+                skills={['React', 'Next.js', 'Tailwind', 'JavaScript', 'TypeScript']} 
+                icon={Layout} 
+                colorClass="bg-[#C4FF48] text-black" // Lime green from reference
+            />
+            <SkillCard 
+                title="Backend & DB" 
+                skills={['PHP', 'Laravel', 'SQL', 'REST API']} 
+                icon={Database} 
+                colorClass="bg-[#FF885B] text-black" // Orange from reference
+            />
+            <SkillCard 
+                title="Tools" 
+                skills={['Git', 'Figma', 'NPM', 'Vite']} 
+                icon={Terminal} 
+                colorClass="bg-gray-100 dark:bg-[#252525] text-gray-900 dark:text-white border border-gray-200 dark:border-white/5" // Neutral
+            />
+            <SkillCard 
+                title="Other Exp" 
+                skills={['C#', 'Game Dev', 'Responsive Design']} 
+                icon={MonitorSmartphone} 
+                colorClass="bg-[#F7BE38] text-black" // Primary yellow
+            />
         </div>
     );
 };
