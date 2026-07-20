@@ -24,7 +24,7 @@ const About = () => {
                                     <img 
                                         src="/images/tomass-veveris.jpg"
                                         alt="Tomass Vēveris" 
-                                        className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500 hover:scale-105"
+                                        className="w-full h-full object-cover"
                                     />
                                 </div>
                             </div>
