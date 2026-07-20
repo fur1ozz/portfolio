@@ -38,10 +38,10 @@ const About = () => {
                             </p>
                             
                             <div className="flex gap-4">
-                                <a href="https://linkedin.com/in/tomass-veveris" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#F7BE38] hover:bg-[#F7BE38] hover:text-white transition-colors">
+                                <a href="https://www.linkedin.com/in/tomass-v%C4%93veris-74bb73363/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#F7BE38] hover:bg-[#F7BE38] hover:text-white transition-colors">
                                     <FaLinkedin size={18} />
                                 </a>
-                                <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#F7BE38] hover:bg-[#F7BE38] hover:text-white transition-colors">
+                                <a href="https://instagram.com/veeveriss" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#F7BE38] hover:bg-[#F7BE38] hover:text-white transition-colors">
                                     <FaInstagram size={18} />
                                 </a>
                                 <a href="https://github.com/fur1ozz" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-[#F7BE38] hover:bg-[#F7BE38] hover:text-white transition-colors">
