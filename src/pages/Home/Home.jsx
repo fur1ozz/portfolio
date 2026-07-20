@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from "../../layouts/Header";
 import Skills from "./sections/Skills";
+import WorkFeatures from "./sections/WorkFeatures";
 import Contact from "../Contact/Contact";
 import Footer from "../../layouts/Footer";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
@@ -83,9 +84,18 @@ const Home = () => {
                         <div id="skills-section">
                             <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-12">
                                 My<br/>
-                                <span className="text-theme-muted opacity-40">Expertise</span>
+                                <span className="text-theme-muted opacity-40">Skills</span>
                             </h2>
                             <Skills />
+                        </div>
+                        
+                        {/* Work Features Section */}
+                        <div id="features-section">
+                            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-8">
+                                Features I've built<br/>
+                                <span className="text-theme-muted opacity-40">For DeskTime</span>
+                            </h2>
+                            <WorkFeatures />
                         </div>
                         
                         {/* Contact Section */}

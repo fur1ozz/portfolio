@@ -1,15 +1,21 @@
 import React from 'react';
-import { Link, useLocation } from "react-router-dom";
-import { Home, Folder, Briefcase, Wrench, Mail, Moon, Sun } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Home, Folder, Briefcase, Mail, Moon, Sun, Star } from "lucide-react";
 import { useDarkMode } from "../utils/HeaderUtils";
 
-const NavItem = ({ to, icon: Icon, label, currentPath }) => {
-    const isActive = currentPath === to;
+const NavItem = ({ to, icon: Icon, label, currentPath, onClick }) => {
+    // If it's a hash link (#features-section), it's active if the current hash matches OR if we clicked it
+    const isActive = to.startsWith('#') 
+        ? window.location.hash === to
+        : currentPath === to;
 
+    const Element = to.startsWith('#') ? 'button' : Link;
+    
     return (
         <div className="group relative flex items-center justify-center">
-            <Link
-                to={to}
+            <Element
+                to={to.startsWith('#') ? undefined : to}
+                onClick={onClick}
                 className={`flex items-center justify-center p-3 rounded-xl transition-all duration-200 ${
                     isActive
                         ? 'bg-accent text-white shadow-sm'
@@ -17,7 +23,7 @@ const NavItem = ({ to, icon: Icon, label, currentPath }) => {
                 }`}
             >
                 <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
-            </Link>
+            </Element>
             
             {/* Tooltip */}
             <div className="absolute top-full mt-2 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity duration-200 z-50">
@@ -32,11 +38,29 @@ const NavItem = ({ to, icon: Icon, label, currentPath }) => {
 const Header = () => {
     const [isDarkMode, toggleDarkMode] = useDarkMode();
     const location = useLocation();
+    const navigate = useNavigate();
+
+    const scrollToFeatures = () => {
+        if (location.pathname !== '/about') {
+            navigate('/about#features-section');
+        }
+        
+        // Wait for potential navigation, then scroll
+        setTimeout(() => {
+            const element = document.getElementById('features-section');
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+                // Manually update URL hash without causing a jump
+                window.history.pushState(null, '', '#features-section');
+            }
+        }, 100);
+    };
 
     return (
         <div className="fixed top-8 left-1/2 -translate-x-1/2 z-[60]">
             <nav className="bg-[#1e1e1e]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-1.5 flex items-center gap-1 shadow-2xl">
                 <NavItem to="/about" icon={Home} label="Home" currentPath={location.pathname} />
+                <NavItem to="#features-section" icon={Star} label="DeskTime Features" currentPath={location.pathname} onClick={scrollToFeatures} />
                 <NavItem to="/projects" icon={Folder} label="Personal Projects" currentPath={location.pathname} />
                 <NavItem to="/experience" icon={Briefcase} label="Experience" currentPath={location.pathname} />
                 
