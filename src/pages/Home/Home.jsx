@@ -51,10 +51,10 @@ const Home = () => {
                     </div>
                     
                     {/* Right Scrollable Content */}
-                    <div className="lg:flex-1 flex flex-col gap-24 relative z-0 pt-0 lg:pt-12">
+                    <div className="lg:flex-1 flex flex-col gap-24 relative">
                         
                         {/* Hero Info */}
-                        <div className="mt-4 lg:mt-8">
+                        <div>
                             <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-extrabold uppercase leading-[0.9] tracking-tight">
                                 Software <br />
                                 <span className="text-theme-muted opacity-40">Engineer</span>
