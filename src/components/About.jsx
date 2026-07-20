@@ -23,7 +23,7 @@ const About = () => {
                                 <img 
                                     src="/images/tomass-veveris.jpg"
                                     alt="Tomass Vēveris" 
-                                    className="w-full h-full object-cover relative z-10 scale-105 hover:scale-110 transition-transform duration-500" 
+                                    className="w-full h-full object-cover relative"
                                 />
                             </div>
                             
