@@ -11,10 +11,10 @@ const About = () => {
             <Header />
             
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-                <div className="flex flex-col lg:flex-row gap-10">
+                <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
                     
                     {/* Left Sticky Sidebar */}
-                    <div className="lg:w-1/3 relative z-10">
+                    <div className="lg:w-[30%] max-w-[380px] mx-auto lg:mx-0 relative z-10">
                         <div className="lg:sticky lg:top-32 bg-theme-text text-theme-bg rounded-[32px] p-8 shadow-xl flex flex-col items-center text-center transition-colors duration-300">
                             
                             {/* Image Container */}
@@ -50,7 +50,7 @@ const About = () => {
                     </div>
                     
                     {/* Right Scrollable Content */}
-                    <div className="lg:w-2/3 flex flex-col gap-24 relative z-0">
+                    <div className="lg:flex-1 flex flex-col gap-24 relative z-0">
                         
                         {/* Hero Info */}
                         <div className="mt-4 lg:mt-8">
@@ -81,7 +81,7 @@ const About = () => {
 
                         {/* Skills Section */}
                         <div id="skills-section">
-                            <h2 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tight leading-[0.9] mb-12">
+                            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-12">
                                 My<br/>
                                 <span className="text-theme-muted opacity-40">Expertise</span>
                             </h2>

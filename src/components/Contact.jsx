@@ -64,8 +64,8 @@ const Contact = ({ isEmbedded = false }) => {
 
     return (
         <div className="w-full">
-            <div className={`w-full flex flex-col justify-start mb-12 ${animate ? 'animate-slide-from-left' : ''}`}>
-                <h2 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tight leading-[0.9]">
+            <div className={`w-full flex flex-col justify-start mb-8 ${animate ? 'animate-slide-from-left' : ''}`}>
+                <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9]">
                     Let's Work<br/>
                     <span className="text-theme-muted opacity-40">Together</span>
                 </h2>
@@ -86,7 +86,7 @@ const Contact = ({ isEmbedded = false }) => {
                             name="from_name"
                             value={formData.from_name}
                             onChange={handleChange}
-                            className="bg-black/5 dark:bg-white/5 border-0 text-theme-text text-base rounded-xl block w-full p-4 outline-none ring-1 ring-inset ring-transparent focus:ring-accent transition-all"
+                            className="bg-black/5 dark:bg-white/5 border-0 text-theme-text text-sm rounded-xl block w-full p-3 outline-none ring-1 ring-inset ring-transparent focus:ring-accent transition-all"
                             placeholder="Your Name"
                         />
                     </div>
@@ -99,13 +99,13 @@ const Contact = ({ isEmbedded = false }) => {
                             name="user_email"
                             value={formData.user_email}
                             onChange={handleChange}
-                            className="bg-black/5 dark:bg-white/5 border-0 text-theme-text text-base rounded-xl block w-full p-4 outline-none ring-1 ring-inset ring-transparent focus:ring-accent transition-all"
+                            className="bg-black/5 dark:bg-white/5 border-0 text-theme-text text-sm rounded-xl block w-full p-3 outline-none ring-1 ring-inset ring-transparent focus:ring-accent transition-all"
                             placeholder="Your@email.com"
                         />
                     </div>
                 </div>
                 
-                <div className="mb-8">
+                <div className="mb-6">
                     <label htmlFor="message" className="block mb-2 text-sm font-semibold text-theme-text opacity-70">Message</label>
                     <textarea
                         id="message"
@@ -113,7 +113,7 @@ const Contact = ({ isEmbedded = false }) => {
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
-                        className="bg-black/5 dark:bg-white/5 border-0 text-theme-text text-base rounded-xl block w-full p-4 outline-none ring-1 ring-inset ring-transparent focus:ring-accent transition-all resize-y"
+                        className="bg-black/5 dark:bg-white/5 border-0 text-theme-text text-sm rounded-xl block w-full p-3 outline-none ring-1 ring-inset ring-transparent focus:ring-accent transition-all resize-y"
                         placeholder="Message"
                     ></textarea>
                 </div>
@@ -121,7 +121,7 @@ const Contact = ({ isEmbedded = false }) => {
                 <div className="flex w-full">
                     <button
                         type="submit"
-                        className="w-full py-4 bg-accent hover:bg-accent-hover text-white font-bold rounded-xl text-base text-center inline-flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-300 ease-in-out"
+                        className="w-full py-3 bg-accent hover:bg-accent-hover text-white font-bold rounded-xl text-sm text-center inline-flex items-center justify-center disabled:cursor-not-allowed disabled:opacity-50 transition-all duration-300 ease-in-out"
                         disabled={isSubmitting || !isFormValid}
                     >
                         {isSubmitting ?
