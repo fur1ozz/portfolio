@@ -9,17 +9,17 @@
     --bg-card: #ffffff;
     --text-main: #171717;
     --text-muted: #737373;
-    --accent: #F06436; /* Striking warm orange/red */
-    --accent-hover: #d1562e;
+    --accent: #FF2F43; /* Striking signal red */
+    --accent-hover: #e11d48;
 }
 
 .dark {
-    --bg-main: #121212; /* Slightly softer than pure black */
-    --bg-card: #ffffff; /* White card on dark background */
+    --bg-main: #0e0e0e; /* The middle ground darker color */
+    --bg-card: #171717; /* Fixed! This will make the experience cards dark again */
     --text-main: #f5f5f5;
     --text-muted: #a3a3a3;
-    --accent: #F06436; /* Striking warm orange/red */
-    --accent-hover: #ff784b;
+    --accent: #FF2F43; /* Striking signal red */
+    --accent-hover: #ff4f61;
 }
 
 html, body {
