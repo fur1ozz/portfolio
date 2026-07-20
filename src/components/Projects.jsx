@@ -72,7 +72,7 @@ const Projects = () => {
                                 className="flex items-center px-3 py-0.5 hover:scale-110 opacity-90 hover:opacity-100 transition ease-in-out bg-[#D3EEDD] rounded-md justify-center text-lg text-[#7d9182] font-semibold shadow-[0_0_25px_0_rgba(0,0,0,0.3)] shadow-white"
                                 onClick={handleExploreClick}
                             >
-                                Explore ->
+                                Explore -&gt;
                             </button>
                         </div>
                     )}
