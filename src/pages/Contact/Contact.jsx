@@ -63,8 +63,8 @@ const Contact = ({ isEmbedded = false }) => {
         <div className="w-full">
             <div className="w-full flex flex-col justify-start mb-8">
                 <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9]">
-                    Let's Work<br/>
-                    <span className="text-theme-muted opacity-40">Together</span>
+                    Get In Touch<br/>
+                    <span className="text-theme-muted opacity-40">With Me</span>
                 </h2>
             </div>
             
