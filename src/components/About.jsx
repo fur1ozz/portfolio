@@ -15,37 +15,34 @@ const About = () => {
                     
                     {/* Left Sticky Sidebar */}
                     <div className="lg:w-1/3 relative z-10">
-                        <div className="lg:sticky lg:top-32 bg-theme-card rounded-[32px] p-8 shadow-xl border border-gray-100 dark:border-white/5 flex flex-col items-center text-center transition-colors duration-300">
+                        <div className="lg:sticky lg:top-32 bg-theme-text text-theme-bg rounded-[32px] p-8 shadow-xl flex flex-col items-center text-center transition-colors duration-300">
                             
-                            {/* Image Container with explicit boundary mapping */}
+                            {/* Image Container */}
                             <div className="relative w-full aspect-[4/5] mb-6 z-0">
-                                {/* Dotted lines overlay moved OUTSIDE the overflow hidden to ensure they show up */}
-                                <div className="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-dashed border-accent rounded-tl-full opacity-60 z-0"></div>
-                                <div className="absolute -bottom-6 -right-6 w-24 h-24 border-b-2 border-r-2 border-dashed border-accent rounded-br-full opacity-60 z-0"></div>
                                 
-                                <div className="w-full h-full bg-accent/10 rounded-[24px] overflow-hidden relative z-10">
+                                <div className="w-full h-full bg-theme-card rounded-[24px] overflow-hidden relative z-10">
                                     <img 
                                         src="/images/tomass-veveris.jpg"
                                         alt="Tomass Vēveris" 
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-500 hover:scale-105"
                                     />
                                 </div>
                             </div>
                             
                             <h2 className="text-3xl font-bold mb-2">Tomass Vēveris</h2>
                             
-                            <p className="text-theme-muted text-sm mb-8 px-2 font-medium mt-4">
+                            <p className="opacity-80 text-sm mb-8 px-2 font-medium mt-4">
                                 A Software Engineer specializing in end-to-end web development, currently building impactful features at DeskTime.
                             </p>
                             
                             <div className="flex gap-4">
-                                <a href="https://www.linkedin.com/in/tomass-v%C4%93veris-74bb73363/" target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-theme-muted hover:bg-accent hover:border-accent hover:text-white transition-all shadow-sm">
+                                <a href="https://www.linkedin.com/in/tomass-v%C4%93veris-74bb73363/" target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full border border-theme-bg/20 flex items-center justify-center text-accent hover:bg-accent hover:border-accent hover:text-white transition-all shadow-sm">
                                     <FaLinkedin size={18} />
                                 </a>
-                                <a href="https://instagram.com/veeveriss" target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-theme-muted hover:bg-accent hover:border-accent hover:text-white transition-all shadow-sm">
+                                <a href="https://instagram.com/veeveriss" target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full border border-theme-bg/20 flex items-center justify-center text-accent hover:bg-accent hover:border-accent hover:text-white transition-all shadow-sm">
                                     <FaInstagram size={18} />
                                 </a>
-                                <a href="https://github.com/fur1ozz" target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center text-theme-muted hover:bg-accent hover:border-accent hover:text-white transition-all shadow-sm">
+                                <a href="https://github.com/fur1ozz" target="_blank" rel="noreferrer" className="w-11 h-11 rounded-full border border-theme-bg/20 flex items-center justify-center text-accent hover:bg-accent hover:border-accent hover:text-white transition-all shadow-sm">
                                     <FaGithub size={18} />
                                 </a>
                             </div>
@@ -84,7 +81,10 @@ const About = () => {
 
                         {/* Skills Section */}
                         <div id="skills-section">
-                            <h2 className="text-3xl font-bold uppercase tracking-tight mb-8">My Expertise</h2>
+                            <h2 className="text-5xl md:text-7xl font-extrabold uppercase tracking-tight leading-[0.9] mb-12">
+                                My<br/>
+                                <span className="text-theme-muted opacity-40">Expertise</span>
+                            </h2>
                             <Skills />
                         </div>
                         

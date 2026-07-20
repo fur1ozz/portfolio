@@ -12,7 +12,7 @@ const NavItem = ({ to, icon: Icon, label, currentPath }) => {
                 to={to}
                 className={`flex items-center justify-center p-3 rounded-xl transition-all duration-200 ${
                     isActive
-                        ? 'bg-white/10 text-white shadow-sm'
+                        ? 'bg-accent text-white shadow-sm'
                         : 'text-gray-400 hover:text-white hover:bg-white/5'
                 }`}
             >

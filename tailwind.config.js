@@ -29,8 +29,6 @@ export default {
         'coffee': 'url("../public/images/projects/coffee.jpg")',
         'memory': 'url("../public/images/projects/memory.jpg")',
         'rocket': 'url("../public/images/projects/rocket.jpg")',
-
-        'lancia': 'url("../public/images/lanciaContact.jpg")',
       },
       fontFamily: {
         topper: ['Poppins', 'sans-serif']
