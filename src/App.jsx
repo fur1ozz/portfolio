@@ -1,14 +1,14 @@
 import { createBrowserRouter, RouterProvider, Navigate, Outlet, ScrollRestoration } from 'react-router-dom';
-import Projects from "./components/Projects";
-import CosmoRun from "./components/projectPages/CosmoRun";
-import MemoryGame from "./components/projectPages/MemoryGame";
-import CoffeeShop from "./components/projectPages/CoffeeShop";
-import TickGet from "./components/projectPages/TickGet";
-import About from "./components/About";
-import Experience from "./components/Experience";
-import DrogasV2 from "./components/projectPages/DrogasV2";
-import GiraV2 from "./components/projectPages/GiraV2";
-import FinanceBudgeting from "./components/projectPages/Finance&Budgeting";
+import Projects from "./pages/Projects/Projects";
+import CosmoRun from "./pages/Projects/pages/CosmoRun";
+import MemoryGame from "./pages/Projects/pages/MemoryGame";
+import CoffeeShop from "./pages/Projects/pages/CoffeeShop";
+import TickGet from "./pages/Projects/pages/TickGet";
+import Home from "./pages/Home/Home";
+import Experience from "./pages/Experience/Experience";
+import DrogasV2 from "./pages/Projects/pages/DrogasV2";
+import GiraV2 from "./pages/Projects/pages/GiraV2";
+import FinanceBudgeting from "./pages/Projects/pages/Finance&Budgeting";
 
 // Layout component wraps everything and includes the built-in ScrollRestoration
 const RootLayout = () => {
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     element: <RootLayout />,
     children: [
       { index: true, element: <Navigate to="/about" replace /> },
-      { path: "about", element: <About /> },
+      { path: "about", element: <Home /> },
       { path: "projects", element: <Projects /> },
       { path: "experience", element: <Experience /> },
       

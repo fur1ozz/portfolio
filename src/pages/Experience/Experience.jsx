@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../../layouts/Header";
+import Footer from "../../layouts/Footer";
 import { Briefcase, Calendar, Code2, Database, Layout } from "lucide-react";
 
 const ExperienceCard = ({ title, company, period, description, highlights, tech, isInternship }) => {

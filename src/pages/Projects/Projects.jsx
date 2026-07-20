@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
-import Header from "./Header";
+import Header from "../../layouts/Header";
 import { Link } from "react-router-dom";
-import '../SliderStyles/Project.css';
-import useAnimateOnMount from "../utils/UseAnimateOnMount";
+import '../../SliderStyles/Project.css';
+import useAnimateOnMount from "../../utils/UseAnimateOnMount";
 
 const child = (name) => {
     return (

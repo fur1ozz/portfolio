@@ -1,11 +1,11 @@
 import React from 'react';
-import Header from "./Header";
-import Skills from "./Skills";
-import Contact from "./Contact";
-import Footer from "./Footer";
+import Header from "../../layouts/Header";
+import Skills from "./sections/Skills";
+import Contact from "../Contact/Contact";
+import Footer from "../../layouts/Footer";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 
-const About = () => {
+const Home = () => {
     return (
         <div className="bg-theme-bg min-h-screen font-topper text-theme-text transition-colors duration-300">
             <Header />
@@ -101,4 +101,4 @@ const About = () => {
     );
 };
 
-export default About;
+export default Home;

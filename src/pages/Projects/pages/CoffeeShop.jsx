@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from "../Header";
-import videoCoffee from "../../assets/coffeeShop.mp4"
-import useAnimateOnMount from "../../utils/UseAnimateOnMount";
+import Header from "../../../layouts/Header";
+import videoCoffee from "../../../assets/coffeeShop.mp4"
+import useAnimateOnMount from "../../../utils/UseAnimateOnMount";
 const CoffeeShop = () => {
     const animate = useAnimateOnMount();
 

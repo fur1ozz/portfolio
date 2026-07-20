@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
-import Header from "./Header";
+import Header from "../../layouts/Header";
 import emailjs from "@emailjs/browser";
-import '../SliderStyles/Contact.css'
-import useAnimateOnMount from "../utils/UseAnimateOnMount";
+import '../../SliderStyles/Contact.css'
+import useAnimateOnMount from "../../utils/UseAnimateOnMount";
 
 const Contact = ({ isEmbedded = false }) => {
     const form = useRef();
