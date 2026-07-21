@@ -19,15 +19,15 @@ const Projects = () => {
     const [showRightArrow, setShowRightArrow] = useState(true);
     const containerRef = useRef(null);
 
-    const links = [
-        { to: "cosmo-run", name: "Cosmo Run", bgClass: "bg-rocket", imageUrl: "/images/projects/rocket.webp" },
-        { to: "memory-game", name: "Flip Meha", bgClass: "bg-memory", imageUrl: "/images/projects/memory.webp" },
-        { to: "coffee-shop", name: "Coffee Time", bgClass: "bg-coffee", imageUrl: "/images/projects/coffee.webp" },
-        { to: "tick-get", name: "TickGet", bgClass: "bg-tickets", imageUrl: "/images/projects/tickets.webp" },
-        { to: "drogas-v2", name: "DrogasV2", bgClass: "bg-drogas", imageUrl: "/images/projects/drogas.webp" },
-        { to: "gira-v2", name: "GiraV2", bgClass: "bg-gira", imageUrl: "/images/projects/gira.webp" },
-        { to: "finance-budgeting", name: "Finance and Budgeting", bgClass: "bg-finance", imageUrl: "/images/projects/finance.webp" },
-        { to: "", name: "Lifting", bgClass: "bg-lifting", imageUrl: "/images/projects/lifting.webp" },
+        const links = [
+        { to: "cosmo-run", name: "Cosmo Run", imageUrl: "/images/projects/rocket.webp" },
+        { to: "memory-game", name: "Flip Meha", imageUrl: "/images/projects/memory.webp" },
+        { to: "coffee-shop", name: "Coffee Time", imageUrl: "/images/projects/coffee.webp" },
+        { to: "tick-get", name: "TickGet", imageUrl: "/images/projects/tickets.webp" },
+        { to: "drogas-v2", name: "DrogasV2", imageUrl: "/images/projects/drogas.webp" },
+        { to: "gira-v2", name: "GiraV2", imageUrl: "/images/projects/gira.webp" },
+        { to: "finance-budgeting", name: "Finance and Budgeting", imageUrl: "/images/projects/finance.webp" },
+        { to: "", name: "Lifting", imageUrl: "/images/projects/lifting.webp" },
         { isPlaceholder: true, imageUrl: "/images/projects/nextProjects2.webp" }
     ];
 
@@ -150,7 +150,7 @@ const Projects = () => {
                                     key={`placeholder-${index}`}
                                     className="border-4 border-black relative group filter grayscale cursor-not-allowed w-[300px] md:w-[350px] h-full flex-shrink-0 overflow-hidden"
                                 >
-                                    <div className="w-full h-full bg-cover bg-nextProjects2 bg-center"></div>
+                                    <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url(${link.imageUrl})` }}></div>
                                 </motion.div>
                             )
                         }
@@ -167,7 +167,7 @@ const Projects = () => {
                                     to={link.to}
                                     className={`border-4 border-black relative group filter grayscale-[90%] hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] md:w-[350px] h-full block overflow-hidden link-container`}
                                 >
-                                    <div className={`w-full h-full bg-cover ${link.bgClass} bg-center group-hover:-translate-y-1 transition-all duration-500 ease-in-out`}></div>
+                                    <div className={`w-full h-full bg-cover bg-center group-hover:-translate-y-1 transition-all duration-500 ease-in-out`} style={{ backgroundImage: `url(${link.imageUrl})` }}></div>
                                     {child(link.name)}
                                 </Link>
                             </motion.div>

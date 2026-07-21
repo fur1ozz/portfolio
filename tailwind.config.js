@@ -19,17 +19,6 @@ export default {
           muted: 'var(--text-muted)',
         },
       },
-      backgroundImage: {
-        'nextProjects2': 'url("../public/images/projects/nextProjects2.webp")',
-        'lifting': 'url("../public/images/projects/lifting.webp")',
-        'finance': 'url("../public/images/projects/finance.webp")',
-        'gira': 'url("../public/images/projects/gira.webp")',
-        'drogas': 'url("../public/images/projects/drogas.webp")',
-        'tickets': 'url("../public/images/projects/tickets.webp")',
-        'coffee': 'url("../public/images/projects/coffee.webp")',
-        'memory': 'url("../public/images/projects/memory.webp")',
-        'rocket': 'url("../public/images/projects/rocket.webp")',
-      },
       fontFamily: {
         topper: ['Poppins', 'sans-serif']
       }
