@@ -81,7 +81,7 @@ const Experience = () => {
                             title="Software Engineer"
                             company="DeskTime"
                             period="June 2025 - Present"
-                            description="Currently acting as a core developer and the secondary lead frontend developer. I am responsible for architecting and deploying massive enterprise-level features while maintaining full-stack operations."
+                            description="Currently working as a full-stack developer and the secondary lead frontend developer. I am responsible for architecting and deploying massive enterprise-level features while maintaining full-stack operations."
                             highlights={[
                                 "Architected and developed a complex Coupon Flow rework for the billing system.",
                                 "Engineered a brand-new IP location detection feature to enhance platform security and tracking accuracy.",

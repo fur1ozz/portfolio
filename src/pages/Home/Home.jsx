@@ -68,7 +68,7 @@ const Home = () => {
                             </FadeIn>
                             <FadeIn delay={0.3} direction="up">
                                 <p className="text-theme-muted text-lg mt-8 max-w-xl leading-relaxed">
-                                    I bridge the gap between robust backend architecture and engaging frontend interfaces. Currently acting as a core developer at DeskTime, I've shipped major platform features like complex billing reworks and IP detection systems, while maintaining databases and leading UI initiatives.
+                                    I bridge the gap between robust backend architecture and engaging frontend interfaces. Currently working as a full-stack developer at DeskTime, I've shipped major platform features like complex billing reworks and IP detection systems, while maintaining databases and leading UI initiatives.
                                 </p>
                             </FadeIn>
                             
