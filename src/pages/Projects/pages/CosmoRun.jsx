@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectLayout from "../../../layouts/ProjectLayout";
 import videoCosmo from '../../../assets/cosmoRun.mp4';
-import { Smartphone, Palette, Server } from "lucide-react";
+import { SiReact, SiTailwindcss, SiLaravel } from "react-icons/si";
 
 const CosmoRun = () => {
     return (
@@ -18,9 +18,9 @@ const CosmoRun = () => {
                 </>
             }
             stack={[
-                { name: "React Native", icon: Smartphone, colorClass: "bg-[#61DAFB]/20 border border-[#61DAFB]/30", textClass: "text-[#3b8dbd] dark:text-[#61DAFB]" },
-                { name: "Tailwind CSS", icon: Palette, colorClass: "bg-[#38bdf8]/20 border border-[#38bdf8]/30", textClass: "text-[#1e8abf] dark:text-[#38bdf8]" },
-                { name: "Laravel", icon: Server, colorClass: "bg-[#FF2D20]/20 border border-[#FF2D20]/30", textClass: "text-[#cc241a] dark:text-[#FF2D20]" }
+                { name: "React Native", icon: SiReact, colorClass: "bg-[#61DAFB]/20 border border-[#61DAFB]/30", textClass: "text-[#3b8dbd] dark:text-[#61DAFB]" },
+                { name: "Tailwind CSS", icon: SiTailwindcss, colorClass: "bg-[#38bdf8]/20 border border-[#38bdf8]/30", textClass: "text-[#1e8abf] dark:text-[#38bdf8]" },
+                { name: "Laravel", icon: SiLaravel, colorClass: "bg-[#FF2D20]/20 border border-[#FF2D20]/30", textClass: "text-[#cc241a] dark:text-[#FF2D20]" }
             ]}
             team={[
                 { name: "Regnārs Kļaviņš", link: "https://www.instagram.com/regnars.klavins/" },

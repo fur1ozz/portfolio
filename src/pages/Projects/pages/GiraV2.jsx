@@ -1,6 +1,6 @@
 import React from 'react';
 import ProjectLayout from "../../../layouts/ProjectLayout";
-import { Code, Palette, Server } from "lucide-react";
+import { SiReact, SiTailwindcss, SiLaravel } from "react-icons/si";
 
 const GiraV2 = () => {
     return (
@@ -13,9 +13,9 @@ const GiraV2 = () => {
             }
             notes="This project was my first attempt at using both the Laravel framework and Tailwind CSS. Through this project, I developed a strong appreciation for both Laravel and Tailwind."
             stack={[
-                { name: "React", icon: Code, colorClass: "bg-[#61DAFB]/20 border border-[#61DAFB]/30", textClass: "text-[#2090b3] dark:text-[#61DAFB]" },
-                { name: "Tailwind", icon: Palette, colorClass: "bg-[#38BDF8]/20 border border-[#38BDF8]/30", textClass: "text-[#1c8ec2] dark:text-[#38BDF8]" },
-                { name: "Laravel", icon: Server, colorClass: "bg-[#FF2D20]/20 border border-[#FF2D20]/30", textClass: "text-[#cc241a] dark:text-[#FF2D20]" }
+                { name: "React", icon: SiReact, colorClass: "bg-[#61DAFB]/20 border border-[#61DAFB]/30", textClass: "text-[#2090b3] dark:text-[#61DAFB]" },
+                { name: "Tailwind", icon: SiTailwindcss, colorClass: "bg-[#38BDF8]/20 border border-[#38BDF8]/30", textClass: "text-[#1c8ec2] dark:text-[#38BDF8]" },
+                { name: "Laravel", icon: SiLaravel, colorClass: "bg-[#FF2D20]/20 border border-[#FF2D20]/30", textClass: "text-[#cc241a] dark:text-[#FF2D20]" }
             ]}
             team={[
                 { name: "Mārcis Jansons" },
