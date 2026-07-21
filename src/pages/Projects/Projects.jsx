@@ -3,6 +3,7 @@ import Header from "../../layouts/Header";
 import { Link } from "react-router-dom";
 import '../../SliderStyles/Project.css';
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const child = (name) => {
     return (
@@ -13,9 +14,9 @@ const child = (name) => {
 }
 
 const Projects = () => {
-    const [showExplore, setShowExplore] = useState(true);
-    const [fadeOut, setFadeOut] = useState(false);
     const [imagesLoaded, setImagesLoaded] = useState(false);
+    const [showLeftArrow, setShowLeftArrow] = useState(false);
+    const [showRightArrow, setShowRightArrow] = useState(true);
     const containerRef = useRef(null);
 
     const links = [
@@ -43,65 +44,64 @@ const Projects = () => {
 
             try {
                 await Promise.all(imagePromises);
-                // add a small artificial delay so the loader is visible
                 setTimeout(() => {
                    setImagesLoaded(true);
                 }, 500)
             } catch (error) {
                 console.error("Failed to load images", error);
-                setImagesLoaded(true); // fall back to showing it anyway
+                setImagesLoaded(true);
             }
         };
 
         loadImages();
     }, []);
 
-    useEffect(() => {
-        const handleScroll = (e) => {
-            setFadeOut(true);
-            setTimeout(() => setShowExplore(false), 200);
-        };
+    const updateArrows = () => {
+        if (!containerRef.current) return;
+        const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
+        setShowLeftArrow(scrollLeft > 10);
+        setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 10);
+    };
 
+    useEffect(() => {
         const handleWheel = (e) => {
             if (containerRef.current) {
-                // If scrolling vertically, translate it to horizontal scroll
                 if (e.deltaY !== 0) {
                     containerRef.current.scrollLeft += e.deltaY;
-                    setFadeOut(true);
-                    setTimeout(() => setShowExplore(false), 200);
                 }
             }
         };
 
-        window.addEventListener('scroll', handleScroll, { once: true });
-
         if (containerRef.current) {
-            containerRef.current.addEventListener('scroll', handleScroll, { once: true });
+            containerRef.current.addEventListener('scroll', updateArrows);
             containerRef.current.addEventListener('wheel', handleWheel);
+            // Initial check
+            updateArrows();
         }
 
+        window.addEventListener('resize', updateArrows);
+
         return () => {
-            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', updateArrows);
             if (containerRef.current) {
-                containerRef.current.removeEventListener('scroll', handleScroll);
+                containerRef.current.removeEventListener('scroll', updateArrows);
                 containerRef.current.removeEventListener('wheel', handleWheel);
             }
         };
-    }, []);
+    }, [imagesLoaded]);
 
-    const handleExploreClick = () => {
-        setFadeOut(true);
+    const scroll = (direction) => {
         if (containerRef.current) {
-            containerRef.current.scrollTo({
-                left: containerRef.current.scrollWidth,
+            const scrollAmount = window.innerWidth > 768 ? 700 : 350; // Scroll roughly two items on desktop, one on mobile
+            containerRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
                 behavior: 'smooth'
             });
         }
-        setTimeout(() => setShowExplore(false), 200);
     };
 
     return (
-        <div>
+        <div className="relative">
             <Header />
             <AnimatePresence>
                 {!imagesLoaded && (
@@ -123,19 +123,22 @@ const Projects = () => {
                 )}
             </AnimatePresence>
 
-            <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden bg-black flex no-scrollbar">
-                <div className="absolute h-screen w-screen top-0 left-0 pointer-events-none">
-                    {showExplore && imagesLoaded && (
-                        <div className={`flex absolute z-10 bottom-0 right-0 mb-16 mr-20 transition-all duration-200 pointer-events-auto ${fadeOut ? 'opacity-0' : ''} `}>
-                            <button
-                                className="flex items-center px-4 py-2 hover:scale-110 opacity-90 hover:opacity-100 transition ease-in-out bg-primary-500 rounded-md justify-center text-lg text-white font-bold shadow-[0_0_20px_rgba(255,47,67,0.5)]"
-                                onClick={handleExploreClick}
-                            >
-                                Explore -&gt;
-                            </button>
-                        </div>
-                    )}
-                </div>
+            {/* Navigation Arrows */}
+            <button
+                onClick={() => scroll('left')}
+                className={`fixed left-4 top-[50vh] -translate-y-1/2 z-20 bg-black/40 text-accent hover:text-white hover:bg-accent p-3 rounded-full backdrop-blur-sm transition-all duration-200 shadow-[0_0_15px_rgba(255,47,67,0.3)] hover:shadow-[0_0_25px_rgba(255,47,67,0.6)] border border-primary-500/20 ${imagesLoaded && showLeftArrow ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+            >
+                <ChevronLeft size={32} />
+            </button>
+
+            <button
+                onClick={() => scroll('right')}
+                className={`fixed right-4 top-[50vh] -translate-y-1/2 z-20 bg-black/40 text-accent hover:text-white hover:bg-accent p-3 rounded-full backdrop-blur-sm transition-all duration-200 shadow-[0_0_15px_rgba(255,47,67,0.3)] hover:shadow-[0_0_25px_rgba(255,47,67,0.6)] border border-primary-500/20 ${imagesLoaded && showRightArrow ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+            >
+                <ChevronRight size={32} />
+            </button>
+
+            <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden bg-black flex no-scrollbar relative">
                 <div className="flex h-full min-w-max">
                     {imagesLoaded && links.map((link, index) => {
                         if (link.isPlaceholder) {
@@ -145,7 +148,7 @@ const Projects = () => {
                                     animate={{ y: 0, opacity: 1 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
                                     key={`placeholder-${index}`}
-                                    className="border-4 border-black relative group filter grayscale cursor-not-allowed w-[300px] sm:w-[400px] h-full flex-shrink-0 overflow-hidden"
+                                    className="border-4 border-black relative group filter grayscale cursor-not-allowed w-[300px] md:w-[350px] h-full flex-shrink-0 overflow-hidden"
                                 >
                                     <div className="w-full h-full bg-cover bg-nextProjects2 bg-center"></div>
                                 </motion.div>
@@ -162,7 +165,7 @@ const Projects = () => {
                             >
                                 <Link
                                     to={link.to}
-                                    className={`border-4 border-black relative group filter grayscale-[90%] hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] sm:w-[400px] h-full block overflow-hidden link-container`}
+                                    className={`border-4 border-black relative group filter grayscale-[90%] hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] md:w-[350px] h-full block overflow-hidden link-container`}
                                 >
                                     <div className={`w-full h-full bg-cover ${link.bgClass} bg-center group-hover:-translate-y-1 transition-all duration-500 ease-in-out`}></div>
                                     {child(link.name)}
