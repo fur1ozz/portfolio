@@ -132,23 +132,23 @@ const ProjectLayout = ({
                     {/* Right Column (Media Only - Sticky) */}
                     <div className="lg:w-[45%] flex flex-col relative">
                         <div className="lg:sticky lg:top-32 w-full">
-                            <FadeIn delay={0.2} direction="up" className="rounded-[32px] overflow-hidden shadow-2xl bg-black border-4 border-theme-card flex justify-center items-center relative w-full">
+                            <FadeIn delay={0.2} direction="up" className="flex justify-center items-center relative w-full">
                                 {media.type === 'video' ? (
-                                    <video src={media.src} autoPlay loop muted playsInline className="w-full h-auto max-h-[85vh] object-contain" />
+                                    <video src={media.src} autoPlay loop muted playsInline className="w-full h-auto max-h-[50vh] object-contain" />
                                 ) : media.type === 'youtube' ? (
                                     <iframe
                                         width="100%"
                                         height="100%"
-                                        src={media.src}
+                                        src={media.src.includes('?') ? `${media.src}&controls=0&modestbranding=1&rel=0&disablekb=1` : `${media.src}?controls=0&modestbranding=1&rel=0&disablekb=1`}
                                         title={title}
                                         frameBorder="0"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                         referrerPolicy="strict-origin-when-cross-origin"
                                         allowFullScreen
-                                        className="w-full aspect-video"
+                                        className="w-full max-w-full aspect-video"
                                     ></iframe>
                                 ) : (
-                                    <div className="flex flex-col items-center gap-4 text-theme-muted py-24">
+                                    <div className="flex flex-col items-center justify-center gap-4 text-theme-muted py-24 rounded-[32px] overflow-hidden shadow-2xl bg-black border-4 border-theme-card w-full aspect-video">
                                         <TriangleAlert size={48} className="opacity-50" />
                                         <p className="font-bold uppercase tracking-widest opacity-50 text-center px-4">Media Not Available</p>
                                     </div>
