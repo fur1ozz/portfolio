@@ -1,7 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import Header from "../../layouts/Header";
 import { Link } from "react-router-dom";
-import '../../SliderStyles/Project.css';
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -165,7 +164,7 @@ const Projects = () => {
                             >
                                 <Link
                                     to={link.to}
-                                    className={`border-4 border-black relative group filter grayscale-[90%] hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] md:w-[350px] h-full block overflow-hidden link-container`}
+                                    className={`border-4 border-black relative group filter grayscale-[90%] hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] md:w-[350px] h-full block overflow-hidden`}
                                 >
                                     <div className={`w-full h-full bg-cover bg-center group-hover:-translate-y-1 transition-all duration-500 ease-in-out`} style={{ backgroundImage: `url(${link.imageUrl})` }}></div>
                                     {child(link.name)}

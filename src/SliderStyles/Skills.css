@@ -1,8 +1,0 @@
-@keyframes slideFromLeftSkill {
-    from{
-        width: 0;
-    }
-}
-.animate-slide-from-left-skill {
-    animation: slideFromLeftSkill 2s ease-in-out forwards;
-}
