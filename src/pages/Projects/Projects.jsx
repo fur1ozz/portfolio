@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import Header from "../../layouts/Header";
 import { Link } from "react-router-dom";
 import '../../SliderStyles/Project.css';
-import useAnimateOnMount from "../../utils/UseAnimateOnMount";
+import { motion, AnimatePresence } from "framer-motion";
 
 const child = (name) => {
     return (
@@ -13,28 +13,78 @@ const child = (name) => {
 }
 
 const Projects = () => {
-    const animate = useAnimateOnMount();
     const [showExplore, setShowExplore] = useState(true);
     const [fadeOut, setFadeOut] = useState(false);
+    const [imagesLoaded, setImagesLoaded] = useState(false);
     const containerRef = useRef(null);
 
+    const links = [
+        { to: "cosmo-run", name: "Cosmo Run", bgClass: "bg-rocket", imageUrl: "/images/projects/rocket.webp" },
+        { to: "memory-game", name: "Flip Meha", bgClass: "bg-memory", imageUrl: "/images/projects/memory.webp" },
+        { to: "coffee-shop", name: "Coffee Time", bgClass: "bg-coffee", imageUrl: "/images/projects/coffee.webp" },
+        { to: "tick-get", name: "TickGet", bgClass: "bg-tickets", imageUrl: "/images/projects/tickets.webp" },
+        { to: "drogas-v2", name: "DrogasV2", bgClass: "bg-drogas", imageUrl: "/images/projects/drogas.webp" },
+        { to: "gira-v2", name: "GiraV2", bgClass: "bg-gira", imageUrl: "/images/projects/gira.webp" },
+        { to: "finance-budgeting", name: "Finance and Budgeting", bgClass: "bg-finance", imageUrl: "/images/projects/finance.webp" },
+        { to: "", name: "Lifting", bgClass: "bg-lifting", imageUrl: "/images/projects/lifting.webp" },
+        { isPlaceholder: true, imageUrl: "/images/projects/nextProjects2.webp" }
+    ];
+
     useEffect(() => {
-        const handleScroll = () => {
-            console.log('Scrolling...');
+        const loadImages = async () => {
+            const imagePromises = links.map((link) => {
+                return new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.src = link.imageUrl;
+                    img.onload = resolve;
+                    img.onerror = reject;
+                });
+            });
+
+            try {
+                await Promise.all(imagePromises);
+                // add a small artificial delay so the loader is visible
+                setTimeout(() => {
+                   setImagesLoaded(true);
+                }, 500)
+            } catch (error) {
+                console.error("Failed to load images", error);
+                setImagesLoaded(true); // fall back to showing it anyway
+            }
+        };
+
+        loadImages();
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = (e) => {
             setFadeOut(true);
             setTimeout(() => setShowExplore(false), 200);
+        };
+
+        const handleWheel = (e) => {
+            if (containerRef.current) {
+                // If scrolling vertically, translate it to horizontal scroll
+                if (e.deltaY !== 0) {
+                    containerRef.current.scrollLeft += e.deltaY;
+                    setFadeOut(true);
+                    setTimeout(() => setShowExplore(false), 200);
+                }
+            }
         };
 
         window.addEventListener('scroll', handleScroll, { once: true });
 
         if (containerRef.current) {
             containerRef.current.addEventListener('scroll', handleScroll, { once: true });
+            containerRef.current.addEventListener('wheel', handleWheel);
         }
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
             if (containerRef.current) {
                 containerRef.current.removeEventListener('scroll', handleScroll);
+                containerRef.current.removeEventListener('wheel', handleWheel);
             }
         };
     }, []);
@@ -50,26 +100,35 @@ const Projects = () => {
         setTimeout(() => setShowExplore(false), 200);
     };
 
-    const links = [
-        { to: "cosmo-run", name: "Cosmo Run", bgClass: "bg-rocket" },
-        { to: "memory-game", name: "Flip Meha", bgClass: "bg-memory" },
-        { to: "coffee-shop", name: "Coffee Time", bgClass: "bg-coffee" },
-        { to: "tick-get", name: "TickGet", bgClass: "bg-tickets" },
-        { to: "drogas-v2", name: "DrogasV2", bgClass: "bg-drogas" },
-        { to: "gira-v2", name: "GiraV2", bgClass: "bg-gira" },
-        { to: "finance-budgeting", name: "Finance and Budgeting", bgClass: "bg-finance" },
-        { to: "", name: "Lifting", bgClass: "bg-lifting" },
-    ];
-
     return (
         <div>
             <Header />
-            <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden bg-black">
-                <div className="absolute h-screen w-screen top-0 left-0">
-                    {showExplore && (
-                        <div className={`flex absolute z-10 bottom-0 right-0 mb-16 mr-20 transition-all duration-200 ${fadeOut ? 'opacity-0' : ''} `}>
+            <AnimatePresence>
+                {!imagesLoaded && (
+                    <motion.div
+                        initial={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center bg-black"
+                    >
+                        <div className="flex flex-col items-center gap-4">
+                            <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+                                className="w-12 h-12 border-4 border-primary-500 border-t-transparent rounded-full"
+                            />
+                            <p className="text-white font-topper tracking-widest uppercase">Loading Projects</p>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden bg-black flex no-scrollbar">
+                <div className="absolute h-screen w-screen top-0 left-0 pointer-events-none">
+                    {showExplore && imagesLoaded && (
+                        <div className={`flex absolute z-10 bottom-0 right-0 mb-16 mr-20 transition-all duration-200 pointer-events-auto ${fadeOut ? 'opacity-0' : ''} `}>
                             <button
-                                className="flex items-center px-3 py-0.5 hover:scale-110 opacity-90 hover:opacity-100 transition ease-in-out bg-[#D3EEDD] rounded-md justify-center text-lg text-[#7d9182] font-semibold shadow-[0_0_25px_0_rgba(0,0,0,0.3)] shadow-white"
+                                className="flex items-center px-4 py-2 hover:scale-110 opacity-90 hover:opacity-100 transition ease-in-out bg-primary-500 rounded-md justify-center text-lg text-white font-bold shadow-[0_0_20px_rgba(255,47,67,0.5)]"
                                 onClick={handleExploreClick}
                             >
                                 Explore -&gt;
@@ -77,21 +136,40 @@ const Projects = () => {
                         </div>
                     )}
                 </div>
-                <div className="flex h-full">
-                    {links.map((link, index) => (
-                        <Link
-                            to={link.to}
-                            className={`border-4 border-black relative group filter grayscale-[90%] hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] h-full flex-shrink-0 overflow-hidden link-container ${animate ? 'slide-down' : ''}`}
-                            style={{ '--animation-delay': `${index * 0.05}s` }}
-                            key={index}
-                        >
-                            <div className={`w-full h-full bg-cover ${link.bgClass} bg-center group-hover:-translate-y-1 transition-all duration-500 ease-in-out`}></div>
-                            {child(link.name)}
-                        </Link>
-                    ))}
-                    <div className="border-4 border-black relative group filter grayscale cursor-not-allowed w-[300px] h-full flex-shrink-0 overflow-hidden">
-                        <div className="w-full h-full bg-cover bg-nextProjects2 bg-center"></div>
-                    </div>
+                <div className="flex h-full min-w-max">
+                    {imagesLoaded && links.map((link, index) => {
+                        if (link.isPlaceholder) {
+                            return (
+                                <motion.div
+                                    initial={{ y: -100, opacity: 0 }}
+                                    animate={{ y: 0, opacity: 1 }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    key={`placeholder-${index}`}
+                                    className="border-4 border-black relative group filter grayscale cursor-not-allowed w-[300px] sm:w-[400px] h-full flex-shrink-0 overflow-hidden"
+                                >
+                                    <div className="w-full h-full bg-cover bg-nextProjects2 bg-center"></div>
+                                </motion.div>
+                            )
+                        }
+
+                        return (
+                            <motion.div
+                                initial={{ y: -100, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                key={index}
+                                className="h-full flex-shrink-0"
+                            >
+                                <Link
+                                    to={link.to}
+                                    className={`border-4 border-black relative group filter grayscale-[90%] hover:filter-none transition-all duration-300 ease-in-out cursor-pointer w-[300px] sm:w-[400px] h-full block overflow-hidden link-container`}
+                                >
+                                    <div className={`w-full h-full bg-cover ${link.bgClass} bg-center group-hover:-translate-y-1 transition-all duration-500 ease-in-out`}></div>
+                                    {child(link.name)}
+                                </Link>
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
 
