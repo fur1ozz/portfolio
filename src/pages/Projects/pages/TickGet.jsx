@@ -1,62 +1,25 @@
 import React from 'react';
-import Header from "../../../layouts/Header";
-import useAnimateOnMount from "../../../utils/UseAnimateOnMount";
+import ProjectLayout from "../../../layouts/ProjectLayout";
+import { SiNextdotjs, SiTailwindcss, SiTypescript, SiLaravel } from "react-icons/si";
 
 const TickGet = () => {
-    const animate = useAnimateOnMount();
-
     return (
-        <>
-            <Header />
-            <div className="min-h-screen overflow-hidden bg-pj-400 flex flex-wrap flex-col lg:flex-row">
-                <div className="lg:w-1/2 flex sm:p-10 pt-10 p-2 flex-col justify-center">
-                    <div className="flex flex-col items-center">
-                        <h1 className={`flex text-5xl font-bold text-pj-100 mt-10 ${animate ? 'animate-slide-from-left' : ''}`}>TickGet</h1>
-                        <p className={`text-pj-300 text-lg text-justify mx-5 mt-14  ${animate ? 'animate-slide-from-left' : ''}`}>
-                            <span className="text-pj-200 font-semibold capitalize">Project Concept: </span>
-                            Discover our Next.js-powered ticket sales website, where admins can create events and manage ticket types effortlessly. Users can filter and view only upcoming events, purchase tickets upon registration, and track their purchase history seamlessly. Experience efficient and user-friendly ticketing for all your event needs.
-                        </p>
-                        <div className={`flex flex-col mt-16 ${animate ? 'animate-slide-from-left' : ''}`}>
-                            <h2 className="flex text-4xl text-pj-200 font-semibold justify-center">Stack</h2>
-                            <div className="flex mt-2">
-                                <svg viewBox="0 0 128 128" className="sm:w-[100px] w-[60px] mx-2">
-                                    <circle cx="64" cy="64" r="64"></circle><path fill="url(#a)" d="M106.317 112.014 49.167 38.4H38.4v51.179h8.614v-40.24l52.54 67.884a64.216 64.216 0 0 0 6.763-5.209z"></path><path fill="url(#b)" d="M81.778 38.4h8.533v51.2h-8.533z"></path><defs><linearGradient id="a" x1="109" x2="144.5" y1="116.5" y2="160.5" gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></linearGradient><linearGradient id="b" x1="121" x2="120.799" y1="54" y2="106.875" gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse"><stop stop-color="#fff"></stop><stop offset="1" stop-color="#fff" stop-opacity="0"></stop></linearGradient></defs>
-                                </svg>
-                                <svg viewBox="0 0 128 128" className="sm:w-[100px] w-[60px] mx-2">
-                                    <path fill="#38bdf8" d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"></path>
-                                </svg>
-                                <svg viewBox="0 0 128 128" className="sm:w-[100px] w-[60px] mx-2">
-                                    <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z"></path><path data-name="original" fill="#007acc" d="M1.5 63.91v62.5h125v-125H1.5zm100.73-5a15.56 15.56 0 017.82 4.5 20.58 20.58 0 013 4c0 .16-5.4 3.81-8.69 5.85-.12.08-.6-.44-1.13-1.23a7.09 7.09 0 00-5.87-3.53c-3.79-.26-6.23 1.73-6.21 5a4.58 4.58 0 00.54 2.34c.83 1.73 2.38 2.76 7.24 4.86 8.95 3.85 12.78 6.39 15.16 10 2.66 4 3.25 10.46 1.45 15.24-2 5.2-6.9 8.73-13.83 9.9a38.32 38.32 0 01-9.52-.1 23 23 0 01-12.72-6.63c-1.15-1.27-3.39-4.58-3.25-4.82a9.34 9.34 0 011.15-.73L82 101l3.59-2.08.75 1.11a16.78 16.78 0 004.74 4.54c4 2.1 9.46 1.81 12.16-.62a5.43 5.43 0 00.69-6.92c-1-1.39-3-2.56-8.59-5-6.45-2.78-9.23-4.5-11.77-7.24a16.48 16.48 0 01-3.43-6.25 25 25 0 01-.22-8c1.33-6.23 6-10.58 12.82-11.87a31.66 31.66 0 019.49.26zm-29.34 5.24v5.12H56.66v46.23H45.15V69.26H28.88v-5a49.19 49.19 0 01.12-5.17C29.08 59 39 59 51 59h21.83z"></path>
-                                </svg>
-                                <svg viewBox="0 0 128 128" className="sm:w-[100px] w-[60px] mx-2">
-                                    <path fill="#f0513f" d="M27.271.11c-.2.078-5.82 3.28-12.487 7.112-8.078 4.644-12.227 7.09-12.449 7.32-.19.225-.34.482-.438.76-.167.564-.179 82.985-.01 83.578.061.23.26.568.44.754.436.46 48.664 28.19 49.25 28.324.272.065.577.054.88-.03.658-.165 48.76-27.834 49.188-28.286.175-.195.375-.532.44-.761.084-.273.115-4.58.115-13.655v-13.26l11.726-6.735c11.056-6.357 11.733-6.755 12.017-7.191l.29-.47V43.287c0-15.548.03-14.673-.585-15.235-.165-.146-5.798-3.433-12.53-7.31L100.89 13.71h-1.359l-11.963 6.87c-6.586 3.788-12.184 7.027-12.457 7.203-.272.18-.597.512-.73.753l-.242.417-.054 13.455-.048 13.46-9.879 5.69c-5.434 3.124-9.957 5.71-10.053 5.734-.175.049-.187-1.232-.187-25.966V15.293l-.26-.447c-.326-.545 1.136.324-13.544-8.114C27.803-.348 28.098-.2 27.27.11zm11.317 10.307c5.15 2.955 9.364 5.4 9.364 5.43 0 .031-4.516 2.641-10.035 5.813l-10.041 5.765-10.023-5.764c-5.507-3.173-10.02-5.783-10.02-5.814 0-.03 4.505-2.64 10.013-5.805l9.999-5.752.69.376c3.357 1.907 6.708 3.824 10.053 5.751zm71.668 13.261c5.422 3.122 9.908 5.702 9.95 5.744.114.103-19.774 11.535-20.046 11.523-.272-.008-19.915-11.335-19.907-11.473.01-.157 19.773-11.527 19.973-11.496.091.022 4.607 2.59 10.03 5.702zM16.3 25.328l9.558 5.503.055 27.247.05 27.252.233.368c.122.194.352.459.52.581.158.115 5.477 3.146 11.818 6.724l11.52 6.506v11.527c0 6.326-.043 11.516-.097 11.516-.041 0-10-5.699-22.124-12.676L5.793 97.201l-.03-38.966-.019-38.954.49.271c.283.15 4.807 2.748 10.065 5.775zm33.754 19.18v25.109l-.387.253c-.525.332-19.667 11.335-19.732 11.335-.03 0-.054-11.336-.054-25.193l.012-25.182 10-5.752c5.499-3.165 10.034-5.733 10.088-5.714.039.024.073 11.34.073 25.144zm38.15-5.775 10.023 5.763V55.92c0 10.838-.011 11.42-.176 11.357-.107-.041-4.642-2.64-10.083-5.774l-9.91-5.69v-11.42c0-6.287.032-11.424.062-11.424.043 0 4.577 2.592 10.084 5.764zm34.164 5.587c0 6.254-.042 11.412-.084 11.462-.072.115-19.896 11.538-20.022 11.538-.031 0-.062-5.135-.062-11.423v-11.42l10-5.756c5.507-3.16 10.042-5.752 10.084-5.752.053 0 .084 5.105.084 11.351zM95.993 70.933 52.005 96.04 32.056 84.693S76 59.277 76.176 59.343zm2.215 14.827-.034 11.442-22.028 12.676c-12.12 6.976-22.082 12.675-22.132 12.675-.053 0-.095-4.658-.095-11.516V99.51l22.08-12.592c12.132-6.923 22.101-12.59 22.154-12.602.043 0 .062 5.148.054 11.443z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                    <div className={`mt-16 mx-5 ${animate ? 'animate-slide-from-left' : ''}`}>
-                        <p className="text-pj-200 font-medium text-lg">Notes:</p>
-                        <ul className="ml-6 mt-2 text-pj-300">
-                            <p>This was my first project created with Next.js. The project includes several features and functionalities. While it has some drawbacks, overall, it is a great initial project with Next.js.</p>
-                        </ul>
-                    </div>
-                </div>
-                <div className="lg:w-1/2 flex sm:p-10 p-2 lg:h-screen">
-                    <div className={`w-full justify-center items-center flex h-full ${animate ? 'animate-slide-from-right' : ''}`}>
-                        <iframe
-                            width="100%"
-                            src="https://www.youtube.com/embed/0nrzx3chc8c?autoplay=1&mute=1"
-                            title="tickGet"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerPolicy="strict-origin-when-cross-origin"
-                            allowFullScreen
-                            className="aspect-video rounded-[10px]"
-                        ></iframe>
-                    </div>
-                </div>
-            </div>
-        </>
+        <ProjectLayout
+            title="TickGet"
+            concept={
+                <p>
+                    Discover our Next.js-powered ticket sales website, where admins can create events and manage ticket types effortlessly. Users can filter and view only upcoming events, purchase tickets upon registration, and track their purchase history seamlessly. Experience efficient and user-friendly ticketing for all your event needs.
+                </p>
+            }
+            notes="This was my first project created with Next.js. The project includes several features and functionalities. While it has some drawbacks, overall, it is a great initial project with Next.js."
+            stack={[
+                { name: "Next.js", icon: SiNextdotjs, colorClass: "bg-black/10 dark:bg-white/10 border border-black/20 dark:border-white/20", textClass: "text-black dark:text-white" },
+                { name: "Tailwind", icon: SiTailwindcss, colorClass: "bg-[#38BDF8]/20 border border-[#38BDF8]/30", textClass: "text-[#1c8ec2] dark:text-[#38BDF8]" },
+                { name: "TypeScript", icon: SiTypescript, colorClass: "bg-[#3178C6]/20 border border-[#3178C6]/30", textClass: "text-[#235a97] dark:text-[#3178C6]" },
+                { name: "Laravel", icon: SiLaravel, colorClass: "bg-[#FF2D20]/20 border border-[#FF2D20]/30", textClass: "text-[#cc241a] dark:text-[#FF2D20]" }
+            ]}
+            media={{ type: 'youtube', src: "https://www.youtube.com/embed/0nrzx3chc8c?autoplay=1&mute=1" }}
+        />
     );
 };
 

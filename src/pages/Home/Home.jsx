@@ -2,9 +2,14 @@ import React from 'react';
 import Header from "../../layouts/Header";
 import Skills from "./sections/Skills";
 import WorkFeatures from "./sections/WorkFeatures";
+import Testimonials from "./sections/Testimonials";
 import Contact from "../Contact/Contact";
 import Footer from "../../layouts/Footer";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
+import FadeIn from "../../components/FadeIn";
+
+//todo delete this variable later when implemented fully
+const SHOW_TESTIMONIALS = false;
 
 const Home = () => {
     return (
@@ -16,7 +21,7 @@ const Home = () => {
                     
                     {/* Left Sticky Sidebar */}
                     <div className="lg:w-[30%] max-w-[380px] mx-auto lg:mx-0 relative z-10">
-                        <div className="lg:sticky lg:top-8 bg-theme-text text-theme-bg rounded-[32px] p-8 shadow-xl flex flex-col items-center text-center transition-colors duration-300">
+                        <FadeIn delay={0.1} direction="up" className="lg:sticky lg:top-8 bg-theme-text text-theme-bg rounded-[32px] p-8 shadow-xl flex flex-col items-center text-center transition-colors duration-300">
                             
                             {/* Image Container */}
                             <div className="relative w-full aspect-[4/5] mb-6 z-0">
@@ -47,55 +52,79 @@ const Home = () => {
                                     <FaGithub size={18} />
                                 </a>
                             </div>
-                        </div>
+                        </FadeIn>
                     </div>
                     
                     {/* Right Scrollable Content */}
-                    <div className="lg:flex-1 flex flex-col gap-24 relative">
+                    <div className="lg:flex-1 flex flex-col gap-24 relative z-0 pt-0 lg:pt-12">
                         
                         {/* Hero Info */}
                         <div>
-                            <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-extrabold uppercase leading-[0.9] tracking-tight">
-                                Software <br />
-                                <span className="text-theme-muted opacity-40">Engineer</span>
-                            </h1>
-                            <p className="text-theme-muted text-lg mt-8 max-w-xl leading-relaxed">
-                                I bridge the gap between robust backend architecture and engaging frontend interfaces. Currently acting as a core developer at DeskTime, I've shipped major platform features like complex billing reworks and IP detection systems, while maintaining databases and leading UI initiatives.
-                            </p>
+                            <FadeIn delay={0.2} direction="up">
+                                <h1 className="text-5xl sm:text-7xl lg:text-[5.5rem] font-extrabold uppercase leading-[0.9] tracking-tight">
+                                    Software <br />
+                                    <span className="text-theme-muted opacity-40">Engineer</span>
+                                </h1>
+                            </FadeIn>
+                            <FadeIn delay={0.3} direction="up">
+                                <p className="text-theme-muted text-lg mt-8 max-w-xl leading-relaxed">
+                                    I bridge the gap between robust backend architecture and engaging frontend interfaces. Currently working as a full-stack developer at DeskTime, I've shipped major platform features like complex billing reworks and IP detection systems, while maintaining databases and leading UI initiatives.
+                                </p>
+                            </FadeIn>
                             
                             {/* Stats */}
-                            <div className="flex gap-12 mt-12">
-                                <div>
-                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">2</h3>
-                                    <p className="text-xs text-theme-muted uppercase tracking-widest text-left font-semibold">Years of<br/>Experience</p>
+                            <FadeIn delay={0.4} direction="up">
+                                <div className="flex gap-12 mt-12">
+                                    <div>
+                                        <h3 className="text-5xl font-bold mb-2 tracking-tighter">2</h3>
+                                        <p className="text-xs text-theme-muted uppercase tracking-widest text-left font-semibold">Years of<br/>Experience</p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-5xl font-bold mb-2 tracking-tighter">10+</h3>
+                                        <p className="text-xs text-theme-muted uppercase tracking-widest text-left font-semibold">Projects<br/>Completed</p>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-5xl font-bold mb-2 tracking-tighter">2+</h3>
+                                        <p className="text-xs text-theme-muted uppercase tracking-widest text-left font-semibold">Major Enterprise<br/>Features</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">10+</h3>
-                                    <p className="text-xs text-theme-muted uppercase tracking-widest text-left font-semibold">Projects<br/>Completed</p>
-                                </div>
-                                <div>
-                                    <h3 className="text-5xl font-bold mb-2 tracking-tighter">2+</h3>
-                                    <p className="text-xs text-theme-muted uppercase tracking-widest text-left font-semibold">Major Enterprise<br/>Features</p>
-                                </div>
-                            </div>
+                            </FadeIn>
                         </div>
 
                         {/* Skills Section */}
                         <div id="skills-section" className="scroll-mt-32">
-                            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-12">
-                                My <span className="text-theme-muted opacity-40">Skills</span>
-                            </h2>
+                            <FadeIn delay={0.1} direction="up">
+                                <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-12">
+                                    My<br/>
+                                    <span className="text-theme-muted opacity-40">Skills</span>
+                                </h2>
+                            </FadeIn>
                             <Skills />
                         </div>
                         
                         {/* Work Features Section */}
                         <div id="features-section" className="scroll-mt-32">
-                            <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-8">
-                                Features I've built<br/>
-                                <span className="text-theme-muted opacity-40">For DeskTime</span>
-                            </h2>
+                            <FadeIn delay={0.1} direction="up">
+                                <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-8">
+                                    Features I've built<br/>
+                                    <span className="text-theme-muted opacity-40">For DeskTime</span>
+                                </h2>
+                            </FadeIn>
                             <WorkFeatures />
                         </div>
+
+                        {/* Testimonials Section */}
+                        {SHOW_TESTIMONIALS && (
+                            <div id="testimonials-section" className="scroll-mt-32">
+                                <FadeIn delay={0.1} direction="up">
+                                    <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-8">
+                                        Colleague<br/>
+                                        <span className="text-theme-muted opacity-40">Feedback</span>
+                                    </h2>
+                                </FadeIn>
+                                <Testimonials />
+                            </div>
+                        )}
                         
                         {/* Contact Section */}
                         <div id="contact-section" className="scroll-mt-32">
