@@ -3,7 +3,6 @@ import Header from "../../layouts/Header";
 import Skills from "./sections/Skills";
 import WorkFeatures from "./sections/WorkFeatures";
 import Testimonials from "./sections/Testimonials";
-import Contact from "../Contact/Contact";
 import Footer from "../../layouts/Footer";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import FadeIn from "../../components/FadeIn";
@@ -125,11 +124,6 @@ const Home = () => {
                                 <Testimonials />
                             </div>
                         )}
-                        
-                        {/* Contact Section */}
-                        <div id="contact-section" className="scroll-mt-32">
-                            <Contact />
-                        </div>
                     </div>
                 </div>
             </div>
