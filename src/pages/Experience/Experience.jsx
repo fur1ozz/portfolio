@@ -44,7 +44,7 @@ const ExperienceCard = ({ title, company, period, description, highlights, tech,
 
                         <div className="flex flex-wrap gap-2 pt-4 border-t border-gray-200 dark:border-white/10">
                             {tech.map((t, index) => (
-                                <span key={index} className="px-3 py-1 bg-black/5 dark:bg-white/5 border border-gray-200 dark:border-white/5 rounded-full text-xs font-semibold text-theme-text shadow-sm">
+                                <span key={index} className="inline-flex items-center px-2 py-1 bg-black/[0.03] dark:bg-white/[0.04] border border-gray-200 dark:border-white/10 rounded-lg text-[11px] font-bold uppercase tracking-wider text-theme-muted hover:text-theme-text hover:border-accent/40 transition-colors">
                                     {t}
                                 </span>
                             ))}
