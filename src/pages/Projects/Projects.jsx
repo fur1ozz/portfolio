@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import Header from "../../layouts/Header";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 const child = (name) => {
     return (
@@ -12,32 +12,32 @@ const child = (name) => {
     );
 }
 
+const links = [
+    { to: "cosmo-run", name: "Cosmo Run", imageUrl: "/images/projects/rocket.webp" },
+    { to: "memory-game", name: "Flip Meha", imageUrl: "/images/projects/memory.webp" },
+    { to: "coffee-shop", name: "Coffee Time", imageUrl: "/images/projects/coffee.webp" },
+    { to: "tick-get", name: "TickGet", imageUrl: "/images/projects/tickets.webp" },
+    { to: "drogas-v2", name: "DrogasV2", imageUrl: "/images/projects/drogas.webp" },
+    { to: "gira-v2", name: "GiraV2", imageUrl: "/images/projects/gira.webp" },
+    { to: "finance-budgeting", name: "Finance and Budgeting", imageUrl: "/images/projects/finance.webp" },
+    { to: "", name: "Lifting", imageUrl: "/images/projects/lifting.webp" },
+    { isPlaceholder: true, imageUrl: "/images/projects/nextProjects2.webp" }
+];
+
 const Projects = () => {
     const [imagesLoaded, setImagesLoaded] = useState(false);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
     const containerRef = useRef(null);
 
-        const links = [
-        { to: "cosmo-run", name: "Cosmo Run", imageUrl: "/images/projects/rocket.webp" },
-        { to: "memory-game", name: "Flip Meha", imageUrl: "/images/projects/memory.webp" },
-        { to: "coffee-shop", name: "Coffee Time", imageUrl: "/images/projects/coffee.webp" },
-        { to: "tick-get", name: "TickGet", imageUrl: "/images/projects/tickets.webp" },
-        { to: "drogas-v2", name: "DrogasV2", imageUrl: "/images/projects/drogas.webp" },
-        { to: "gira-v2", name: "GiraV2", imageUrl: "/images/projects/gira.webp" },
-        { to: "finance-budgeting", name: "Finance and Budgeting", imageUrl: "/images/projects/finance.webp" },
-        { to: "", name: "Lifting", imageUrl: "/images/projects/lifting.webp" },
-        { isPlaceholder: true, imageUrl: "/images/projects/nextProjects2.webp" }
-    ];
-
     useEffect(() => {
         const loadImages = async () => {
             const imagePromises = links.map((link) => {
                 return new Promise((resolve, reject) => {
                     const img = new Image();
+                    img.addEventListener('load', resolve);
+                    img.addEventListener('error', reject);
                     img.src = link.imageUrl;
-                    img.onload = resolve;
-                    img.onerror = reject;
                 });
             });
 
@@ -63,17 +63,17 @@ const Projects = () => {
     };
 
     useEffect(() => {
+        const container = containerRef.current;
+
         const handleWheel = (e) => {
-            if (containerRef.current) {
-                if (e.deltaY !== 0) {
-                    containerRef.current.scrollLeft += e.deltaY;
-                }
+            if (container && e.deltaY !== 0) {
+                container.scrollLeft += e.deltaY;
             }
         };
 
-        if (containerRef.current) {
-            containerRef.current.addEventListener('scroll', updateArrows);
-            containerRef.current.addEventListener('wheel', handleWheel);
+        if (container) {
+            container.addEventListener('scroll', updateArrows);
+            container.addEventListener('wheel', handleWheel);
             // Initial check
             updateArrows();
         }
@@ -82,9 +82,9 @@ const Projects = () => {
 
         return () => {
             window.removeEventListener('resize', updateArrows);
-            if (containerRef.current) {
-                containerRef.current.removeEventListener('scroll', updateArrows);
-                containerRef.current.removeEventListener('wheel', handleWheel);
+            if (container) {
+                container.removeEventListener('scroll', updateArrows);
+                container.removeEventListener('wheel', handleWheel);
             }
         };
     }, [imagesLoaded]);
@@ -127,14 +127,14 @@ const Projects = () => {
                 onClick={() => scroll('left')}
                 className={`fixed left-4 top-[50vh] -translate-y-1/2 z-20 bg-black/40 text-accent hover:text-white hover:bg-accent p-3 rounded-full backdrop-blur-sm transition-all duration-200 shadow-[0_0_15px_rgba(255,47,67,0.3)] hover:shadow-[0_0_25px_rgba(255,47,67,0.6)] border border-primary-500/20 ${imagesLoaded && showLeftArrow ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
             >
-                <ChevronLeft size={32} />
+                <ChevronLeftIcon size={32} />
             </button>
 
             <button
                 onClick={() => scroll('right')}
                 className={`fixed right-4 top-[50vh] -translate-y-1/2 z-20 bg-black/40 text-accent hover:text-white hover:bg-accent p-3 rounded-full backdrop-blur-sm transition-all duration-200 shadow-[0_0_15px_rgba(255,47,67,0.3)] hover:shadow-[0_0_25px_rgba(255,47,67,0.6)] border border-primary-500/20 ${imagesLoaded && showRightArrow ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
             >
-                <ChevronRight size={32} />
+                <ChevronRightIcon size={32} />
             </button>
 
             <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden bg-black flex no-scrollbar relative">

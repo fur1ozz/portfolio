@@ -3,7 +3,7 @@ import Header from "../../layouts/Header";
 import Skills from "./sections/Skills";
 import WorkFeatures from "./sections/WorkFeatures";
 import Testimonials from "./sections/Testimonials";
-import Contact from "../Contact/Contact";
+import Currently from "./sections/Currently";
 import Footer from "../../layouts/Footer";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import FadeIn from "../../components/FadeIn";
@@ -113,6 +113,17 @@ const Home = () => {
                             <WorkFeatures />
                         </div>
 
+                        {/* Currently Section */}
+                        <div id="currently-section" className="scroll-mt-32">
+                            <FadeIn delay={0.1} direction="up">
+                                <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tight leading-[0.9] mb-12">
+                                    Off the clock<br/>
+                                    <span className="text-theme-muted opacity-40">Currently</span>
+                                </h2>
+                            </FadeIn>
+                            <Currently />
+                        </div>
+
                         {/* Testimonials Section */}
                         {SHOW_TESTIMONIALS && (
                             <div id="testimonials-section" className="scroll-mt-32">
@@ -125,11 +136,6 @@ const Home = () => {
                                 <Testimonials />
                             </div>
                         )}
-                        
-                        {/* Contact Section */}
-                        <div id="contact-section" className="scroll-mt-32">
-                            <Contact isEmbedded={true} />
-                        </div>
                     </div>
                 </div>
             </div>

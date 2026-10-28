@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import FadeIn from "../components/FadeIn";
 import { Link } from "react-router-dom";
-import { ArrowLeft, ExternalLink, TriangleAlert, Users } from "lucide-react";
+import { ArrowLeftIcon, ExternalLinkIcon, TriangleAlertIcon, UsersIcon } from "lucide-react";
 import { FaGithub } from "react-icons/fa";
 
 const ProjectSkillCard = ({ title, icon: Icon, colorClass, textClass }) => (
@@ -32,7 +32,7 @@ const ProjectLayout = ({
             
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
                 <Link to="/projects" className="inline-flex items-center gap-2 text-theme-muted hover:text-accent font-bold uppercase tracking-wider mb-8 transition-colors self-start">
-                    <ArrowLeft size={20} /> Back to Projects
+                    <ArrowLeftIcon size={20} /> Back to Projects
                 </Link>
 
                 <div className="flex flex-col-reverse lg:flex-row gap-16 lg:gap-24">
@@ -54,7 +54,7 @@ const ProjectLayout = ({
                                 {team.length > 0 && (
                                     <div className="flex-1">
                                         <h3 className="flex items-center gap-2 font-bold uppercase mb-3 opacity-70 tracking-widest text-xs">
-                                            <Users size={14} /> Team
+                                            <UsersIcon size={14} /> Team
                                         </h3>
                                         <ul className="flex flex-col gap-1.5 text-sm font-medium">
                                             {team.map((member, idx) => (
@@ -76,7 +76,7 @@ const ProjectLayout = ({
                                     <div className="flex flex-col gap-3 justify-center sm:min-w-[200px]">
                                         {links.liveDemo && (
                                             <a href={links.liveDemo} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-full bg-accent text-white text-sm font-bold uppercase tracking-wider hover:bg-accent-hover transition-colors shadow-md">
-                                                <ExternalLink size={16} /> Live Demo
+                                                <ExternalLinkIcon size={16} /> Live Demo
                                             </a>
                                         )}
                                         {links.sourceCode && (
@@ -136,6 +136,8 @@ const ProjectLayout = ({
                                 {media.type === 'video' ? (
                                     <video src={media.src} autoPlay loop muted playsInline className="w-full h-auto max-h-[50vh] object-contain" />
                                 ) : media.type === 'youtube' ? (
+                                    // YouTube embeds need allow-scripts + allow-same-origin, which makes sandbox ineffective
+                                    // oxlint-disable-next-line react/iframe-missing-sandbox
                                     <iframe
                                         width="100%"
                                         height="100%"
@@ -149,7 +151,7 @@ const ProjectLayout = ({
                                     ></iframe>
                                 ) : (
                                     <div className="flex flex-col items-center justify-center gap-4 text-theme-muted py-24 rounded-[32px] overflow-hidden shadow-2xl bg-black border-4 border-theme-card w-full aspect-video">
-                                        <TriangleAlert size={48} className="opacity-50" />
+                                        <TriangleAlertIcon size={48} className="opacity-50" />
                                         <p className="font-bold uppercase tracking-widest opacity-50 text-center px-4">Media Not Available</p>
                                     </div>
                                 )}
