@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowUpRight, ExternalLink } from 'lucide-react';
+import { ArrowUpRightIcon, ExternalLinkIcon } from 'lucide-react';
 
 const FeatureItem = ({ title, description, link }) => {
     return (
@@ -13,7 +13,7 @@ const FeatureItem = ({ title, description, link }) => {
                 <div className="max-w-2xl flex-1">
                     <div className="flex items-center gap-2 mb-2">
                         <h3 className="text-[18px] font-bold text-theme-text transition-colors group-hover:text-accent">{title}</h3>
-                        <ExternalLink size={14} className="text-theme-muted opacity-50 group-hover:opacity-100 group-hover:text-accent transition-all" />
+                        <ExternalLinkIcon size={14} className="text-theme-muted opacity-50 group-hover:opacity-100 group-hover:text-accent transition-all" />
                     </div>
                     <p className="text-theme-muted text-sm leading-relaxed opacity-90 mb-3">
                         {description}
@@ -23,7 +23,7 @@ const FeatureItem = ({ title, description, link }) => {
                     </span>
                 </div>
                 <div className="text-theme-muted/50 group-hover:text-accent transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 mt-1 flex-shrink-0">
-                    <ArrowUpRight size={20} strokeWidth={2.5} />
+                    <ArrowUpRightIcon size={20} strokeWidth={2.5} />
                 </div>
             </div>
         </a>

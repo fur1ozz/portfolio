@@ -1,5 +1,5 @@
 import React from 'react';
-import { Quote } from "lucide-react";
+import { QuoteIcon } from "lucide-react";
 import FadeIn from "../../../components/FadeIn";
 
 const Testimonials = () => {
@@ -26,7 +26,7 @@ const Testimonials = () => {
                             <div className="relative z-10 flex flex-col md:flex-row gap-8 items-start">
                                 {/* Icon */}
                                 <div className="bg-accent/10 dark:bg-accent/20 p-4 rounded-full text-accent flex-shrink-0">
-                                    <Quote size={32} className="fill-accent/20" />
+                                    <QuoteIcon size={32} className="fill-accent/20" />
                                 </div>
                                 
                                 {/* Content */}

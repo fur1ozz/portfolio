@@ -1,5 +1,5 @@
 import React from 'react';
-import { MonitorSmartphone, Database, Layout, Terminal, Code2, Plug } from "lucide-react";
+import { MonitorSmartphoneIcon, DatabaseIcon, LayoutIcon, TerminalIcon, Code2Icon, PlugIcon } from "lucide-react";
 
 const SkillCard = ({ title, skills, icon: Icon, colorClass, textClass }) => (
     <div className={`p-8 rounded-[32px] flex flex-col justify-between min-h-[220px] ${colorClass} ${textClass} transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]`}>
@@ -19,42 +19,42 @@ const Skills = () => {
             <SkillCard 
                 title="Frontend" 
                 skills={['React', 'Next.js', 'Tailwind', 'TypeScript', 'Redux']} 
-                icon={Layout} 
+                icon={LayoutIcon} 
                 colorClass="bg-[#C4FF48]" 
                 textClass="text-black"
             />
             <SkillCard 
                 title="Backend" 
                 skills={['PHP', 'Laravel', 'MySQL', 'REST APIs']} 
-                icon={Database} 
+                icon={DatabaseIcon} 
                 colorClass="bg-[#FF885B]" 
                 textClass="text-black"
             />
             <SkillCard 
                 title="Ecosystem" 
                 skills={['Inertia.js', 'Filament', 'Alpine.js', 'Blade']} 
-                icon={Code2} 
+                icon={Code2Icon} 
                 colorClass="bg-[#F7BE38]" 
                 textClass="text-black"
             />
             <SkillCard 
                 title="Integrations" 
                 skills={['Stripe', 'Postmark', 'Webhooks']} 
-                icon={Plug} 
+                icon={PlugIcon} 
                 colorClass="bg-theme-text" 
                 textClass="text-theme-bg"
             />
             <SkillCard 
                 title="DevOps" 
                 skills={['Docker', 'GitLab', 'GitHub', 'Vite']} 
-                icon={Terminal} 
+                icon={TerminalIcon} 
                 colorClass="bg-gray-100 dark:bg-[#252525] border border-gray-200 dark:border-white/5" 
                 textClass="text-gray-900 dark:text-white"
             />
             <SkillCard 
                 title="Other Exp" 
                 skills={['System Arch', 'C#', 'Game Dev', 'Figma']} 
-                icon={MonitorSmartphone} 
+                icon={MonitorSmartphoneIcon} 
                 colorClass="bg-accent" 
                 textClass="text-white"
             />

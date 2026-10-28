@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useSpring } from "framer-motion";
 import Header from "../../layouts/Header";
 import Footer from "../../layouts/Footer";
-import { Briefcase, Calendar, Check, TrendingUp } from "lucide-react";
+import { BriefcaseIcon, CalendarIcon, CheckIcon, TrendingUpIcon } from "lucide-react";
 import FadeIn from "../../components/FadeIn";
 
 const experiences = [
@@ -77,7 +77,7 @@ const MilestoneIcon = ({ ongoing }) => {
 
     return (
         <span className="flex w-5 h-5 items-center justify-center rounded-full bg-accent/10 text-accent flex-shrink-0">
-            <Check size={12} strokeWidth={3} />
+            <CheckIcon size={12} strokeWidth={3} />
         </span>
     );
 };
@@ -114,7 +114,7 @@ const ExperienceCard = ({ title, company, start, end, summary, highlights, tech,
 
                 {/* Timeline Dot */}
                 <div className="absolute left-0 md:left-1/2 w-8 h-8 rounded-full bg-accent border-4 border-theme-bg -translate-x-1/2 flex items-center justify-center z-10 top-0 shadow-lg shadow-accent/30">
-                    <Briefcase size={14} className="text-white" />
+                    <BriefcaseIcon size={14} className="text-white" />
                 </div>
 
                 {/* Content Card */}
@@ -123,7 +123,7 @@ const ExperienceCard = ({ title, company, start, end, summary, highlights, tech,
 
                         <div className="flex items-center justify-between gap-3 mb-4">
                             <div className="flex items-center gap-2 text-accent font-bold text-xs uppercase tracking-wider">
-                                <Calendar size={14} />
+                                <CalendarIcon size={14} />
                                 <span>{formatMonth(start)} – {isCurrent ? 'Present' : formatMonth(end)}</span>
                             </div>
 
@@ -179,7 +179,7 @@ const PromotionMarker = ({ label, date }) => (
     <FadeIn delay={0.1} direction="none" className="relative h-10 mb-16">
         <div className="absolute left-0 md:left-1/2 -translate-x-4 md:-translate-x-1/2 top-0 z-10 inline-flex items-center gap-2 pr-4 rounded-full bg-theme-card border border-gray-200 dark:border-white/10 shadow-lg shadow-black/5 whitespace-nowrap">
             <span className="flex w-8 h-8 items-center justify-center rounded-full bg-accent/10 text-accent">
-                <TrendingUp size={14} />
+                <TrendingUpIcon size={14} />
             </span>
             <span className="text-xs font-bold uppercase tracking-wider text-theme-text">{label}</span>
             <span className="text-xs text-theme-muted">{date}</span>

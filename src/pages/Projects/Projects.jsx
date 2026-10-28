@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import Header from "../../layouts/Header";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
 const child = (name) => {
     return (
@@ -127,14 +127,14 @@ const Projects = () => {
                 onClick={() => scroll('left')}
                 className={`fixed left-4 top-[50vh] -translate-y-1/2 z-20 bg-black/40 text-accent hover:text-white hover:bg-accent p-3 rounded-full backdrop-blur-sm transition-all duration-200 shadow-[0_0_15px_rgba(255,47,67,0.3)] hover:shadow-[0_0_25px_rgba(255,47,67,0.6)] border border-primary-500/20 ${imagesLoaded && showLeftArrow ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
             >
-                <ChevronLeft size={32} />
+                <ChevronLeftIcon size={32} />
             </button>
 
             <button
                 onClick={() => scroll('right')}
                 className={`fixed right-4 top-[50vh] -translate-y-1/2 z-20 bg-black/40 text-accent hover:text-white hover:bg-accent p-3 rounded-full backdrop-blur-sm transition-all duration-200 shadow-[0_0_15px_rgba(255,47,67,0.3)] hover:shadow-[0_0_25px_rgba(255,47,67,0.6)] border border-primary-500/20 ${imagesLoaded && showRightArrow ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
             >
-                <ChevronRight size={32} />
+                <ChevronRightIcon size={32} />
             </button>
 
             <div ref={containerRef} className="h-screen overflow-x-auto overflow-y-hidden bg-black flex no-scrollbar relative">

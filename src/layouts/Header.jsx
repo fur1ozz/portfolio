@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Home, Folder, Briefcase, Mail, Moon, Sun, Star } from "lucide-react";
+import { HomeIcon, FolderIcon, BriefcaseIcon, MailIcon, MoonIcon, SunIcon, StarIcon } from "lucide-react";
 import { useDarkMode } from "../utils/HeaderUtils";
 
 const NavItem = ({ to, icon: Icon, label, currentPath, onClick }) => {
@@ -58,10 +58,10 @@ const Header = () => {
     return (
         <div className="fixed top-8 left-1/2 -translate-x-1/2 z-[60]">
             <nav className="bg-[#1e1e1e]/90 backdrop-blur-xl border border-white/10 rounded-2xl p-1.5 flex items-center gap-1 shadow-2xl">
-                <NavItem to="/about" icon={Home} label="Home" currentPath={location.pathname} />
-                <NavItem to="#features-section" icon={Star} label="DeskTime Features" currentPath={location.pathname} onClick={scrollToFeatures} />
-                <NavItem to="/projects" icon={Folder} label="Personal Projects" currentPath={location.pathname} />
-                <NavItem to="/experience" icon={Briefcase} label="Experience" currentPath={location.pathname} />
+                <NavItem to="/about" icon={HomeIcon} label="Home" currentPath={location.pathname} />
+                <NavItem to="#features-section" icon={StarIcon} label="DeskTime Features" currentPath={location.pathname} onClick={scrollToFeatures} />
+                <NavItem to="/projects" icon={FolderIcon} label="Personal Projects" currentPath={location.pathname} />
+                <NavItem to="/experience" icon={BriefcaseIcon} label="Experience" currentPath={location.pathname} />
                 
                 <div className="w-[1px] h-8 bg-white/10 mx-1"></div>
                 
@@ -70,7 +70,7 @@ const Header = () => {
                     className="p-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-200"
                     title="Toggle Dark Mode"
                 >
-                    {isDarkMode === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+                    {isDarkMode === "dark" ? <SunIcon size={20} /> : <MoonIcon size={20} />}
                 </button>
             </nav>
         </div>
