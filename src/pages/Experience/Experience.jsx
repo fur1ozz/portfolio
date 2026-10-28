@@ -5,7 +5,6 @@ import Footer from "../../layouts/Footer";
 import { Briefcase, Calendar, Check, TrendingUp } from "lucide-react";
 import FadeIn from "../../components/FadeIn";
 
-// TODO: milestone dates are placeholders, swap in the real ones
 const experiences = [
     {
         title: "Software Engineer",
@@ -20,10 +19,12 @@ const experiences = [
         ],
         tech: ['React', 'TypeScript', 'SCSS', 'PHP', 'Laravel', 'Inertia.js', 'MySQL'],
         milestones: [
-            { title: "Coupon Flow rework shipped", date: "Sep 2025" },
-            { title: "IP location detection shipped", date: "Jan 2026" },
-            { title: "DeskTime Chrome extension shipped", note: "Built with WXT", date: "Aug 2026" },
-            { title: "Maintaining & growing the extension", date: "Now", ongoing: true },
+            { title: "Coupon Flow rework shipped", date: "Nov 2025" },
+            { title: "IP location detection shipped", date: "Mar 2026" },
+            { title: "DeskTime Chrome extension built", note: "WXT · for internal use", date: "Aug 2026" },
+            { title: "Updated reports", date: "Shipping soon", ongoing: true },
+            { title: "Application facelift", date: "In progress", ongoing: true },
+            { title: "New pricing plan", date: "In progress", ongoing: true },
         ],
     },
     {
@@ -39,8 +40,7 @@ const experiences = [
         tech: ['React', 'JavaScript', 'Blade', 'Bootstrap', 'PHP', 'Laravel'],
         milestones: [
             { title: "Joined DeskTime", date: "Nov 2024" },
-            { title: "Internal side project completed", note: "Laravel, React, MySQL", date: "Jan 2025" },
-            { title: "Moved onto the core platform", date: "Feb 2025" },
+            { title: "Moved from side project to the core platform", note: "Laravel, React, MySQL", date: "Jan 2025" },
         ],
     },
 ];
