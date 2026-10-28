@@ -1,9 +1,9 @@
-import React, {useEffect, useRef, useState} from 'react';
-import emailjs from "@emailjs/browser";
+import React, {useRef, useState} from 'react';
+import { sendForm } from "@emailjs/browser";
 
 import FadeIn from "../../components/FadeIn";
 
-const Contact = ({ isEmbedded = false }) => {
+const Contact = () => {
     const form = useRef();
     const [formData, setFormData] = useState({
         from_name: '',
@@ -11,28 +11,21 @@ const Contact = ({ isEmbedded = false }) => {
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [error, setError] = useState('');
-    const [isFormValid, setIsFormValid] = useState(false);
 
-    useEffect(() => {
-        const isValid = formData.from_name.trim() !== '' &&
-            formData.user_email.trim() !== '' &&
-            formData.message.trim() !== '';
-        setIsFormValid(isValid);
-    }, [formData]);
+    const isFormValid = formData.from_name.trim() !== '' &&
+        formData.user_email.trim() !== '' &&
+        formData.message.trim() !== '';
 
     const sendEmail = (e) => {
         e.preventDefault();
 
-        if (!formData.from_name || !formData.user_email || !formData.message) {
-            setError('All fields are required');
+        if (!isFormValid) {
             return;
         }
 
         setIsSubmitting(true);
 
-        emailjs
-            .sendForm('service_zg3f9ai', 'template_99ysqhf', form.current, {
+        sendForm('service_zg3f9ai', 'template_99ysqhf', form.current, {
                 publicKey: '_tSf2BybjaZrdsGfh',
             })
             .then(

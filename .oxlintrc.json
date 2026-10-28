@@ -21,7 +21,13 @@
     "react/react-in-jsx-scope": "off",
     "import/no-unassigned-import": "off",
     "react/exhaustive-effect-dependencies": "off",
-    "jsx-a11y/prefer-tag-over-role": "off"
+    "jsx-a11y/prefer-tag-over-role": "off",
+    "jsx-a11y/control-has-associated-label": [
+      "error",
+      {
+        "depth": 6
+      }
+    ]
   },
   "ignorePatterns": [
     "dist",

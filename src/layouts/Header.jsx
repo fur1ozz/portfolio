@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { HomeIcon, FolderIcon, BriefcaseIcon, MailIcon, MoonIcon, SunIcon, StarIcon } from "lucide-react";
+import { HomeIcon, FolderIcon, BriefcaseIcon, MoonIcon, SunIcon, StarIcon } from "lucide-react";
 import { useDarkMode } from "../utils/HeaderUtils";
 
 const NavItem = ({ to, icon: Icon, label, currentPath, onClick }) => {

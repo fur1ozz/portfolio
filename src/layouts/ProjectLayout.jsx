@@ -136,6 +136,8 @@ const ProjectLayout = ({
                                 {media.type === 'video' ? (
                                     <video src={media.src} autoPlay loop muted playsInline className="w-full h-auto max-h-[50vh] object-contain" />
                                 ) : media.type === 'youtube' ? (
+                                    // YouTube embeds need allow-scripts + allow-same-origin, which makes sandbox ineffective
+                                    // oxlint-disable-next-line react/iframe-missing-sandbox
                                     <iframe
                                         width="100%"
                                         height="100%"

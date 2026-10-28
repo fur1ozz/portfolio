@@ -128,7 +128,7 @@ const Home = () => {
                         
                         {/* Contact Section */}
                         <div id="contact-section" className="scroll-mt-32">
-                            <Contact isEmbedded={true} />
+                            <Contact />
                         </div>
                     </div>
                 </div>

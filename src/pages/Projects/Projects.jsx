@@ -12,32 +12,32 @@ const child = (name) => {
     );
 }
 
+const links = [
+    { to: "cosmo-run", name: "Cosmo Run", imageUrl: "/images/projects/rocket.webp" },
+    { to: "memory-game", name: "Flip Meha", imageUrl: "/images/projects/memory.webp" },
+    { to: "coffee-shop", name: "Coffee Time", imageUrl: "/images/projects/coffee.webp" },
+    { to: "tick-get", name: "TickGet", imageUrl: "/images/projects/tickets.webp" },
+    { to: "drogas-v2", name: "DrogasV2", imageUrl: "/images/projects/drogas.webp" },
+    { to: "gira-v2", name: "GiraV2", imageUrl: "/images/projects/gira.webp" },
+    { to: "finance-budgeting", name: "Finance and Budgeting", imageUrl: "/images/projects/finance.webp" },
+    { to: "", name: "Lifting", imageUrl: "/images/projects/lifting.webp" },
+    { isPlaceholder: true, imageUrl: "/images/projects/nextProjects2.webp" }
+];
+
 const Projects = () => {
     const [imagesLoaded, setImagesLoaded] = useState(false);
     const [showLeftArrow, setShowLeftArrow] = useState(false);
     const [showRightArrow, setShowRightArrow] = useState(true);
     const containerRef = useRef(null);
 
-        const links = [
-        { to: "cosmo-run", name: "Cosmo Run", imageUrl: "/images/projects/rocket.webp" },
-        { to: "memory-game", name: "Flip Meha", imageUrl: "/images/projects/memory.webp" },
-        { to: "coffee-shop", name: "Coffee Time", imageUrl: "/images/projects/coffee.webp" },
-        { to: "tick-get", name: "TickGet", imageUrl: "/images/projects/tickets.webp" },
-        { to: "drogas-v2", name: "DrogasV2", imageUrl: "/images/projects/drogas.webp" },
-        { to: "gira-v2", name: "GiraV2", imageUrl: "/images/projects/gira.webp" },
-        { to: "finance-budgeting", name: "Finance and Budgeting", imageUrl: "/images/projects/finance.webp" },
-        { to: "", name: "Lifting", imageUrl: "/images/projects/lifting.webp" },
-        { isPlaceholder: true, imageUrl: "/images/projects/nextProjects2.webp" }
-    ];
-
     useEffect(() => {
         const loadImages = async () => {
             const imagePromises = links.map((link) => {
                 return new Promise((resolve, reject) => {
                     const img = new Image();
+                    img.addEventListener('load', resolve);
+                    img.addEventListener('error', reject);
                     img.src = link.imageUrl;
-                    img.onload = resolve;
-                    img.onerror = reject;
                 });
             });
 
@@ -63,17 +63,17 @@ const Projects = () => {
     };
 
     useEffect(() => {
+        const container = containerRef.current;
+
         const handleWheel = (e) => {
-            if (containerRef.current) {
-                if (e.deltaY !== 0) {
-                    containerRef.current.scrollLeft += e.deltaY;
-                }
+            if (container && e.deltaY !== 0) {
+                container.scrollLeft += e.deltaY;
             }
         };
 
-        if (containerRef.current) {
-            containerRef.current.addEventListener('scroll', updateArrows);
-            containerRef.current.addEventListener('wheel', handleWheel);
+        if (container) {
+            container.addEventListener('scroll', updateArrows);
+            container.addEventListener('wheel', handleWheel);
             // Initial check
             updateArrows();
         }
@@ -82,9 +82,9 @@ const Projects = () => {
 
         return () => {
             window.removeEventListener('resize', updateArrows);
-            if (containerRef.current) {
-                containerRef.current.removeEventListener('scroll', updateArrows);
-                containerRef.current.removeEventListener('wheel', handleWheel);
+            if (container) {
+                container.removeEventListener('scroll', updateArrows);
+                container.removeEventListener('wheel', handleWheel);
             }
         };
     }, [imagesLoaded]);
